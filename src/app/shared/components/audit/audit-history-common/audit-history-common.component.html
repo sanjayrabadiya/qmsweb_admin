@@ -1,0 +1,62 @@
+<div class="modal-body overflow-hidden ah-sync-grid">
+  <div class="row">
+    <div class="form-group col-md-12">
+      <ejs-grid #grid [dataSource]="AuditTrailData" [allowSorting]='true' [allowGrouping]='true' [allowPaging]='true'
+        [pageSettings]='pageSettings' allowTextWrap='true' [allowExcelExport]='true' [allowPdfExport]='true'>
+        <ng-template #toolbarTemplate let-data>
+          <ejs-toolbar>
+            <e-items>
+              <e-item>
+                <ng-template #template>
+                  <div class="row w-100 align-items-center">
+                    <div class="col-md-3 modal-title fs-17 mobile-pl-20"> {{ pageName }} Audit History</div>
+                    <div class="col-sm-4 search-area-new">
+                      <div class="search-wrapper-new">
+                        <div class="search">
+                          <input type="text" class="k-textbox w-100" noSpace placeholder="Search"
+                            [(ngModel)]="searchText" (input)="grid.search(searchText);" />
+                          <span class="fa fa-search form-control-feedback"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-auto ml-auto mobile-mt-10">
+                      <span class="sync-dropdown-btn-popup">
+                        <span class="btn-circle-icon btn-cicle-yellow for-syn-btn">
+                          <i class="las la-download"></i>
+                        </span>
+                        <button ejs-dropdownbutton [items]='items' content='Export' class="fs-14" (select)='itemBeforeEvent($event)'>
+                        </button>
+                      </span>
+                      <button class="btn-white btn-border btn-add ml-2" (click)="close()">
+                        <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </ng-template>
+              </e-item>
+            </e-items>
+          </ejs-toolbar>
+        </ng-template>
+        <e-columns>
+          <e-column field="recordId" headerText="Key" width="110"> </e-column>
+          <e-column field="ipAddress" headerText="IP Address" width="180"> </e-column>
+          <e-column field="action" headerText="Action" width="130"> </e-column>
+          <e-column field="columnName" headerText="Field Name" width="200"> </e-column>
+          <e-column field="oldValue" headerText="Old Value" width="250"> </e-column>
+          <e-column field="newValue" headerText="New Value" width="250"> </e-column>
+          <e-column field="reasonName" headerText="Reason" width="200"> </e-column>
+          <e-column field="reasonOth" headerText="Comments" width="200" allowTextWrap="true"> </e-column>
+          <e-column field="userName" headerText="User" width="180"> </e-column>
+          <e-column field="userRoleName" headerText="Role" width="180"> </e-column>
+          <e-column field="createdDate" headerText="Date Time" width="200">
+            <ng-template #template let-dataItem>
+              {{ dataItem.createdDate | dateTimeFormat }}
+            </ng-template>
+          </e-column>
+          <e-column field="timeZone" headerText="Time Zone" width="180"> </e-column>
+        </e-columns>
+      </ejs-grid>
+    </div>
+  </div>
+</div>

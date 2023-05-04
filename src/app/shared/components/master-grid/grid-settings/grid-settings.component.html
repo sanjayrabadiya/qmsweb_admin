@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <div class="form-row align-items-center w-100">
+    <div class="col-md-auto col-auto">
+      <h4 class="modal-title">Columns settings</h4>
+    </div>
+    <div class="col-md-auto ml-auto col">
+      <button class="btn-gray btn-add mr-2" [disabled]="isInvalid()" (click)="save()">
+        <span class="btn-circle-icon btn-cicle-green">
+          <img src="./assets/images/check-small.svg" />
+        </span>
+        Save
+      </button>
+      <button class="btn-gray btn-add" (click)="close()">
+        <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+<div class="modal-body">
+  <div *ngIf="items?.length">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="tbl-grd-header">
+          <th>Visible</th>
+          <th>Title</th>
+          <th>Width</th>
+          <th>Field</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of items">
+        <td class="align-middle text-center">
+          <input type="checkbox" id="checkbox{{ item.columnField }}" class="k-checkbox"
+            [(ngModel)]="item.isColumnVisible" />
+          <label class="k-checkbox-label" style="margin-right: 15px;" for="checkbox{{ item.columnField }}"></label>
+        </td>
+        <td class="align-middle"><input type="text" class="k-textbox w-100" [(ngModel)]="item.columnTitle" disabled/></td>
+        <td class="align-middle"><input type="text" class="k-textbox w-100" [(ngModel)]="item.columnWidth" numOnly /></td>
+        <td class="align-middle">{{ item.columnField }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

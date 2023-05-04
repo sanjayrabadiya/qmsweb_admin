@@ -1,0 +1,49 @@
+<div class="login-main">
+  <form role="form" [formGroup]="form">
+    <div class="login-container">
+      <div class="box-shadow">
+        <div class="row">
+          <div class="col-md-5 px-0">
+            <div class="login-logo h-100">
+              <img src="./assets/images/Logo.png" class="mt-5" />
+              <div class="form-row mt-4 justify-content-center align-items-center">
+                <div class="col-md-auto col-auto">
+                  -
+                </div>
+                <div class="col-md-auto col-auto">
+                  Group of GSC Company
+                </div>
+                <div class="col-md-auto col-auto">
+                  -
+                </div>
+              </div>
+              <div class="form-row mt-5 justify-content-center align-items-center">
+                <div class="col-md-auto col-auto">
+                  eClinical Platform
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 px-0">
+            <div class="login-control h-100">
+              <div class="login-text pt-5">
+                VALIDATE OTP
+              </div>
+              <input type="password" class="form-control" placeholder="OTP" formControlName="otp" />
+              <div class="required-text" *ngIf="form.get('otp').hasError('required') && form.get('otp').touched">
+                OTP is required
+              </div>
+              <br />
+              <div class="login-btn">
+                <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="validate()">
+                  VALIDATE
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

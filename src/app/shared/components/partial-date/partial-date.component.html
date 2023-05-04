@@ -1,0 +1,74 @@
+<!-- <form [formGroup]="formGroup">
+  <div class="row align-items-center kendo-controls-theme control-inner-icon">
+    <div class="form-group col-md-4">
+      <kendo-textbox-container class="width-100" floatingLabel="Year">
+        <kendo-combobox
+          [data]="years"
+          formControlName="year"
+          [valuePrimitive]="true"
+          textField="value"
+          valueField="value"
+          (valueChange)="yearChanged()"
+          (blur)="onTouched()"
+        >
+        </kendo-combobox>
+      </kendo-textbox-container>
+    </div>
+    <div class="form-group col-md-4">
+      <kendo-textbox-container class="width-100" floatingLabel="Month">
+        <kendo-combobox
+          [data]="months"
+          formControlName="month"
+          [valuePrimitive]="true"
+          textField="value"
+          valueField="value"
+          (valueChange)="monthChanged()"
+          (blur)="onTouched()"
+          [disableControl]="disabled"
+          [popupSettings]="{ width: 'auto' }"
+        >
+        </kendo-combobox>
+      </kendo-textbox-container>
+    </div>
+    <div class="form-group col-md-4">
+      <kendo-textbox-container class="width-100" floatingLabel="Day">
+        <kendo-combobox
+          [data]="days"
+          formControlName="day"
+          [valuePrimitive]="true"
+          textField="value"
+          valueField="value"
+          (valueChange)="dayChanged()"
+          (blur)="onTouched()"
+          [disableControl]="disabled"
+          [popupSettings]="{ width: 'auto' }"
+        >
+        </kendo-combobox>
+      </kendo-textbox-container>
+    </div>
+  </div>
+</form> -->
+
+
+<form [formGroup]="formGroup">
+  <div class="row align-items-center control-inner-icon">
+    <div class="form-group col-md-4">
+      <label>Year</label>
+      <ejs-combobox [dataSource]="years" [ngModelOptions]="{ standalone: true }" [(ngModel)]="year" [fields]="fields" placeholder="Year" class="w-100"
+        (ngModelChange)="yearChanged()"  [disabled]="disabled" >
+      </ejs-combobox>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Month</label>
+      <ejs-combobox [dataSource]="months" [ngModelOptions]="{ standalone: true }" [(ngModel)]="month" [fields]="fields" placeholder="Year" class="w-100"
+        (ngModelChange)="monthChanged()"  [disabled]="disabled">
+      </ejs-combobox>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Day</label>
+      <ejs-combobox [dataSource]="days" [ngModelOptions]="{ standalone: true }" [(ngModel)]="day" [fields]="fields" placeholder="Year" class="w-100"
+        (ngModelChange)="dayChanged()"  [disabled]="disabled">
+      </ejs-combobox>
+    </div>
+  </div>
+</form>

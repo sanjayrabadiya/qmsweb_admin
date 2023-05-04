@@ -1,0 +1,67 @@
+//background colors
+$primary: #048ac9;
+$red: #e74c3c;
+$teal: #1abc9c;
+$white: #ffffff;
+$yellow: #d8a93c;
+$green: #35cb82;
+$body: #f5f7f9;
+$purple: #896ad4;
+$gray-dark: #f5f5f5;
+$bg-light-gray: #fbfbfb;
+$menu-bg: #f2f2f2;
+$modal-bg: #f3f3f3;
+$control-bg: #f1f1f1;
+//colors
+$text-primary: #54617a;
+$text-secondary: #6a6a6a;
+$text-gray-normal: #b8b8b8;
+$text-white: #ffffff;
+$text-black: #152227;
+$text-lightgray: #585858;
+//borders
+$border-primary: #025175;
+$border-secondary: #f3be25;
+$border-white: #ffffff;
+$border-black: #152227;
+$border-lightgray: #dfdfdf;
+//btn colors
+.text-red {
+  color: $red !important;
+}
+
+.text-blue {
+  color: $primary !important;
+}
+.text-dark-blue {
+  color: #023b75 !important;
+}
+.text-green {
+  color: $green !important;
+}
+
+.text-black {
+  color: $text-primary;
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-gray-normal {
+  color: $text-gray-normal;
+}
+
+.border-priamry-blue {
+  border-color: $primary;
+}
+.border-secondary-gray {
+  border-color: rgba(0,0,0,.125);
+}
+.boder-2px {
+  border-width: 2px;
+}

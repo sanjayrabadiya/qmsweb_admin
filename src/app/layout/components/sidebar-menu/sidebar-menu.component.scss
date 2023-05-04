@@ -1,0 +1,161 @@
+@import "../../../../assets/scss/colors.scss";
+:host {
+  background: $primary;
+  color: $white;
+  position: fixed;
+  right: auto;
+  top: 126px;
+  left: 0;
+  bottom: 0;
+  min-width: 237px;
+  z-index: 9999;
+  padding: 20px 0 20px 20px;
+}
+
+.parent-nav {
+  overflow-y: auto;
+  height: calc(100vh - 168px);
+}
+
+ul {
+  font-weight: 400;
+  list-style: none;
+}
+
+.menu-title {
+  font-size: 14px;
+}
+
+.navbar-nav .nav-link {
+  cursor: pointer;
+  color: $white;
+  padding: 1rem 1rem;
+  .fa {
+    margin-right: 20px;
+  }
+  &:hover {
+    color: $white !important;
+  }
+}
+
+.second-level-sidebar {
+  background-color: $white;
+  height: 100vh;
+  width: 237px;
+  position: absolute;
+  top: -20px;
+  left: 216px;
+  box-shadow: 5px 0 5px -4px #cacaca;
+  .submenu-items {
+    overflow-y: auto;
+    height: calc(100vh - 165px);
+  }
+}
+.second-menu-list {
+  list-style: none;
+  color: #4d4d4d;
+  padding-left: 25px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.parent-menu {
+  background-color: #def4ff;
+  color: #096b9a;
+  padding: 10px 0 10px 26px;
+}
+.close-btn {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  color: #096b9a;
+  z-index: 5;
+  cursor: pointer;
+  i {
+    font-size: 23px;
+  }
+}
+.ng-trigger-slideInOut .second-level-sidebar {
+  left: -237px;
+}
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  :host {
+    min-width: 100%;
+    padding: 20px 0 20px 0;
+    width: 100%;
+  }
+  .menu-title {
+    padding-left: 10px;
+  }
+  .parent-nav {
+    padding-left: 7px;
+  }
+  .second-level-sidebar {
+    width: 100%;
+    left: 0;
+    .submenu-items {
+      overflow-y: auto;
+      height: calc(100vh - 165px);
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: row;
+      padding: 6px;
+      align-content: end;
+    }
+  }
+
+  .second-menu-list {
+    width: 50%;
+    flex: 1 0 50%;
+    max-width: calc(50% - 10px);
+    background-color: #e8e8e8;
+    margin: 5px 5px;
+    border-radius: 5px;
+    height: fit-content;
+    padding: 0 10px;
+  }
+
+  .navbar-nav {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    color: #2d2d2d;
+    span {
+      margin-top: 10px;
+      display: block;
+    }
+    .fa {
+      margin-right: 0;
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+  }
+  .nav-item {
+    flex: 1 0 50%;
+    max-width: calc(50% - 12px);
+    background-color: #fff;
+    margin: 4px;
+    border-radius: 5px;
+    min-height: 100px;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}

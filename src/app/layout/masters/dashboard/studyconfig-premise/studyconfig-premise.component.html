@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <div class="form-row align-items-center w-100">
+        <div class="col-md-auto col-auto">
+            <h4 class="modal-title">Study Config</h4>
+        </div>
+        <div class="col-md-auto ml-auto col"> 
+            <button type="button" class="btn-white btn-border mr-1"
+            (click)="onBackClick.emit()">
+            <span class="btn-circle-icon btn-cicle-red">
+                <i class="las la-arrow-left"></i>
+            </span>
+            Back
+           </button>           
+            <button class="btn-gray btn-add mr-2" (click)="onSave()" [disabled]="form.invalid || form.pristine" *ngIf='!editing'>
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Update
+            </button>  
+            <button class="btn-gray btn-add mr-2" (click)="onEdit()" *ngIf='editing'>
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Edit
+            </button>            
+            <!-- <button type="button" class="btn-white btn-border mr-1" (click)="onReset()">
+                <span class="btn-circle-icon btn-cicle-blue">
+                    <i class="las la-sync-alt"></i>
+                </span>
+                Reset
+            </button>            -->
+        </div>
+    </div>
+</div>
+<div class="modal-body"> 
+    <form [formGroup]="form">
+       
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">No of Study</label>
+                <span *ngIf='!editing'>
+                <input type="text" class="k-textbox w-100" formControlName="noofStudy" maxlength="200" numOnly noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('noofStudy').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('noofStudy').hasError('required') && form.get('noofStudy').touched">
+                    This field is required!
+                </div>
+               </span>
+               <span *ngIf='editing'>{{studyConfig.noofStudy}}</span>
+            </div>          
+           
+               
+            <div class="form-group col-lg-4 col-md-6">
+                <label>Valid From</label>
+                <div *ngIf='!editing'>
+                <ejs-datepicker placeholder="Valid From"  formControlName="validFrom"
+                    (valueChange)="setValidToDate($event)"></ejs-datepicker>
+                </div>
+               <div *ngIf='editing'>{{studyConfig.validFrom | dateFormat }}</div>
+            </div>   
+            <div class="form-group col-lg-4 col-md-6">
+                <label>Valid To</label>
+                <div *ngIf='!editing'>
+                <ejs-datepicker placeholder="Valid To"  [min]='TValidTo' formControlName="validTo">
+                </ejs-datepicker>
+            </div>
+             <div *ngIf='editing'>{{studyConfig.validTo | dateFormat}}</div>
+            </div>           
+        </div>
+    </form>
+</div>

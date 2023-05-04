@@ -1,0 +1,87 @@
+<div class="modal-header">
+    <div class="form-row align-items-center w-100">
+        <div class="col-md-auto col-auto">
+            <h4 class="modal-title">Login Preference</h4>
+        </div>
+        <div class="col-md-auto ml-auto col-auto">
+            <button class="btn-gray btn-add mr-2" (click)="onSave()" [disabled]="form.invalid || form.pristine">
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Save
+            </button>
+            <button type="button" class="btn-white btn-border mr-1" (click)="onReset()">
+                <span class="btn-circle-icon btn-cicle-blue">
+                    <i class="las la-sync-alt"></i>
+                </span>
+                Reset
+            </button>
+            <button class="btn-gray btn-add" (click)="close()">
+                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-3">
+                <label class="label-primary">Company</label>
+                <ejs-combobox [dataSource]="CompanyData" [fields]="fields" class="w-100" placeholder="Select Company"
+                    formControlName="companyId" [disabled]="true">
+                </ejs-combobox>
+                <span>
+                    <span class="req-symbol-left" *ngIf="form.get('companyId').hasError('required')"></span>
+                    <div class="required-text"
+                        *ngIf="form.get('companyId').hasError('required') && form.get('companyId').touched">
+                        This field is required!
+                    </div>
+                </span>
+
+            </div>
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Min Password Length</label>
+                <input type="text" class="w-100 k-textbox" formControlName="minPasswordLength" numOnly noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('minPasswordLength').hasError('required')"></span>
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Required Special Char</label>
+                <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredSpecialChar" [fields]="sslfields"
+                    placeholder="Special Char" class="w-100">
+                </ejs-combobox>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Required Alpha Numeric</label>
+                <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredAlphaNumber" [fields]="sslfields"
+                    placeholder="Alpha Char" class="w-100">
+                </ejs-combobox>
+            </div>
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Required Capital</label>
+                <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredCapital" [fields]="sslfields"
+                    placeholder="Required Capital" class="w-100">
+                </ejs-combobox>
+            </div>
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Expired Day</label>
+                <input type="text" class="w-100 k-textbox" formControlName="expiredDay" numOnly noSpace />
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">Max Login Attempt</label>
+                <input type="text" class="w-100 k-textbox" formControlName="maxLoginAttempt" numOnly noSpace />
+
+            </div>
+           
+        </div>
+    </form>
+</div>

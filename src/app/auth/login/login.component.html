@@ -1,0 +1,161 @@
+<div class="login-main">
+  <ng-container *ngIf="!isFirstTime">
+    <form role="form" [formGroup]="form">
+      <div class="login-container">
+        <div class="box-shadow">
+          <div class="row">
+            <div class="col-md-5 px-0">
+              <div class="login-logo h-100">
+                <img src="./assets/images/Logo.png" class="mt-5" />
+                <div class="form-row mt-4 justify-content-center align-items-center">
+                  <div class="col-md-auto col-auto">
+                    -
+                  </div>
+                  <div class="col-md-auto col-auto">
+                    Group of GSC Company
+                  </div>
+                  <div class="col-md-auto col-auto">
+                    -
+                  </div>
+                </div>
+                <div class="form-row mt-5 justify-content-center align-items-center">
+                  <div class="col-md-auto col-auto">
+                    eClinical Platform
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 px-0">
+              <div class="login-control h-100">
+                <div class="login-text pt-5">
+                  Login With Your Account
+                </div>
+                <div>
+                  <input type="text" class="form-control" placeholder="Username" formControlName="userName" />
+                  <div class="required-text"
+                    *ngIf="form.get('userName').hasError('required') && form.get('userName').touched">
+                    User name is required
+                  </div>
+                  <br />
+                  <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+                  <div class="required-text"
+                    *ngIf="form.get('password').hasError('required') && form.get('password').touched">
+                    Password is required
+                  </div>
+                </div>
+
+                <br />
+                <div class="forgot">
+                  <a routerLink="../forgot" class="text-center">
+                    Forgot Password?
+                  </a>
+                </div>
+                <div class="text-center login-btn">
+                  <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="login()">
+                    <!-- {{ roles ? 'CONTINUE' : 'LOGIN' }} --> LOGIN
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="login-container" [hidden]="!roles">
+        <div class="box-shadow">
+          <div class="row">
+            <div class="col-md-12 px-0">
+              <div class="login-control login-container-role h-100">
+                <div>
+                  <div class="back-btn" (click)="roleBack()">
+                    <i class="las la-arrow-left"></i>
+                  </div>
+                  <div class="login-text">
+                    Select Your Role
+                  </div>
+                  <div class="btn-role-area">
+                    <button class="btn-role" *ngFor="let role of roles" [class.selected]="selectedRoleId === role.id"
+                      (click)="roleSelected(role)">
+                      {{ role.value }}
+                    </button>
+                  </div>
+                  <div class="login-btn text-right mt-5">
+                    <button type="button" class="btn btn-primary" [disabled]="!form.valid" (click)="login()">
+                      Continue
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </form>
+  </ng-container>
+  <!-- <ng-container *ngIf="isFirstTime">
+    <form name="changePasswordForm" [formGroup]="changePasswordForm" novalidate>
+      <div class="login-container">
+        <div class="box-shadow">
+          <div class="row">
+            <div class="col-md-5 px-0">
+              <div class="login-logo h-100">
+                <img src="./assets/images/Logo.png" class="mt-5" />
+                <div class="form-row mt-4 justify-content-center align-items-center">
+                  <div class="col-md-auto col-auto">
+                    -
+                  </div>
+                  <div class="col-md-auto col-auto">
+                    Group of GSC Company
+                  </div>
+                  <div class="col-md-auto col-auto">
+                    -
+                  </div>
+                </div>
+                <div class="form-row mt-5 justify-content-center align-items-center">
+                  <div class="col-md-auto col-auto">
+                    eClinical Platform
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 px-0">
+              <div class="login-control h-100">
+                <div class="login-text pt-5">
+                  Reset Password
+                </div>
+                <div>
+                  <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+                  <div class="required-text"
+                    *ngIf="changePasswordForm.get('password').hasError('required') && changePasswordForm.get('password').touched">
+                    This field is required
+                  </div>
+                  <br />
+                  <input type="password" class="form-control" placeholder="Re-type Password" formControlName="reTypePassword" />
+                  <div class="required-text"
+                    *ngIf="changePasswordForm.get('reTypePassword').hasError('required') && changePasswordForm.get('reTypePassword').touched">
+                    This field is required
+                  </div>
+                </div>
+                <br />
+                
+                <div class="text-center login-btn">
+                  <button type="submit" class="btn btn-primary" [disabled]="!changePasswordForm.valid" (click)="onChangePassword()">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-container> -->
+  <div class="copyright-text">
+    <div class="form-row justify-content-center">
+      <div class="col-md-auto col-auto">Version:</div>
+      <div class="col-md-auto col-auto">2.0.0</div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-auto col-auto">&copy; All copyrights & powered by : ClinVigilant Research</div>
+    </div>
+  </div>
+</div>

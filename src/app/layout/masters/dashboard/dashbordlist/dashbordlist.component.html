@@ -1,0 +1,106 @@
+<div id="grid" class="page-layout carded fullwidth inner-scroll">
+    <div class="top-bg accent"></div>
+    <div class="center">
+        <div class="master-grid">
+            <ejs-grid #grid id='Grid' [dataSource]="companyList" [allowSorting]='true' [allowGrouping]='false'
+                [allowPaging]='true' [pageSettings]='pageSettings' [allowExcelExport]='true' [allowPdfExport]='true'>
+                <ng-template #toolbarTemplate>
+                    <ejs-toolbar>
+                        <e-items>
+                            <e-item>
+                                <ng-template #template>
+                                    <div class="grid-header w-100">
+                                        <div class="row overflow-x align-items-center">
+                                            <div class="col-sm-3 search-area-new">
+                                                <div class="search-wrapper-new">
+                                                    <div class="search">
+                                                        <input type="text" class="searchtext k-textbox w-100" noSpace
+                                                            placeholder="Search" [(ngModel)]="searchText"
+                                                            (input)="grid.search(searchText);" />
+                                                        <span class="fa fa-search form-control-feedback"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-auto ml-auto mobile-mt-10 white-space-nr">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-md-auto">
+                                                        <button type="button"
+                                                            class="btn-white btn-border mr-1 fs-14"
+                                                            (click)="addClick.emit()">
+                                                            <span class="btn-circle-icon btn-cicle-green">
+                                                                <img src="./assets/images/add.svg" />
+                                                            </span>
+                                                            Add New
+                                                        </button>
+                                                        <!-- <audit-history-common-button *viewRights="config.screenCode"
+                                                            [tableName]="config.table" [pageName]="config.title">
+                                                        </audit-history-common-button> -->
+                                                        <span class="sync-dropdown-btn">
+                                                            <span class="btn-circle-icon btn-cicle-yellow for-syn-btn">
+                                                                <i class="las la-download"></i>
+                                                            </span>
+                                                            <button ejs-dropdownbutton 
+                                                                class="fs-14" [items]='items' content='Export'
+                                                                (select)='itemBeforeEvent($event)'>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-auto">
+                                                        <ejs-checkbox label="Show Deactivated Records"
+                                                            class="ml-2 d-flex" [(ngModel)]="isDeleted"
+                                                            (ngModelChange)="onDeleteChange($event)"></ejs-checkbox>
+                                                    </div>
+                                                    <!-- <grid-settings-button [screenCode]="config.screenCode">
+                                                    </grid-settings-button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-item>
+                        </e-items>
+                    </ejs-toolbar>
+                </ng-template>
+                <e-columns>
+                    <e-column headerText='Action' width="150">
+                        <ng-template #template let-dataItem>                            
+                            <div class="form-row align-items-center justify-content-center">
+                                <div class="col-md-auto">                                                                      
+                                    <grid-buttons [moduleId]="moduleId" [dataItem]="dataItem" [ctrlName]="config.table"
+                                        [hideEdit]="config.hideEdit" [customDelete]="config.customDelete" [that]="this"
+                                        (deleteClick)="deleteClick.emit(dataItem.id)"
+                                        (editClick)="editClick.emit(dataItem.id)" (deleted)="deleted.emit()"
+                                        [screenCode]="config.screenCode">
+                                    </grid-buttons>                                   
+                                </div>                                
+                            </div>
+                        </ng-template>
+                    </e-column>                   
+                    <e-column field='companyCode' headerText='Company Code'></e-column>
+                    <e-column field='companyName' headerText='Company Name'></e-column> 
+                    <e-column field='phone' headerText='Company Phone'></e-column>   
+                    <e-column field='address' headerText='Address'></e-column>   
+                    <e-column field='zoneMaster' headerText='Zone'></e-column>          
+                    <e-column field="createdByUser" headerText="Created By"> </e-column>
+                    <e-column field="createdDate" headerText="Created Date">
+                        <ng-template #template let-dataItem>
+                            {{ dataItem.createdDate | dateTimeFormat }}
+                        </ng-template>
+                    </e-column>
+                    <e-column field="modifiedByUser" headerText="Modified By"> </e-column>
+                    <e-column field="modifiedDate" headerText="Modified Date">
+                        <ng-template #template let-dataItem>
+                            {{ dataItem.modifiedDate | dateTimeFormat }}
+                        </ng-template>
+                    </e-column>
+                    <e-column field="deletedByUser" headerText="Deleted By" [visible]="isDeleted"></e-column>
+                    <e-column field="deletedDate" headerText="Deleted Date" [visible]="isDeleted">
+                        <ng-template #template let-dataItem>
+                            {{ dataItem.deletedDate | dateTimeFormat }}
+                        </ng-template>
+                    </e-column>
+                </e-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <div class="row align-items-center w-100">
+        <div class="col-md-auto">
+            <h4 class="modal-title" id="modal-basic-title">Electronic Signature</h4>
+        </div>
+        <!-- <div class="col-md-auto ml-auto">
+            <button class="btn-main-gray mr-2" [disabled]="isInvalid()" (click)="validatelogin()">
+                <span class="btn-circle-icon btn-cicle-green">
+                    <i class="las la-check"></i>
+                </span>
+                <span>
+                    Proceed
+                </span>
+            </button>
+            <button class="btn-main-gray" (click)="close()">
+                <span class="btn-circle-icon btn-cicle-red">
+                    <i class="las la-times"></i>
+                </span>
+                <span>
+                    Cancel
+                </span>
+            </button>
+        </div> -->
+        <div class="col-md-auto ml-auto col">
+            <button class="btn-gray btn-add mr-2" [disabled]="isInvalid()" (click)="validatelogin()">
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Proceed
+            </button>
+            <button class="btn-gray btn-add" (click)="close()">
+                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+                Cancel
+            </button>
+        </div>
+       
+    </div>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>User</label>
+            <input type="text" class="form-control" value={{securityObj.userName}} disabled>
+        </div>
+      
+        <div class="form-group col-md-5">
+            <label>Date & Time</label>
+            <input type="text" class="form-control" [value]="CurrentDate" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Password</label>
+            <input type="password" name="password" [(ngModel)]="password" [ngModelOptions]="{ standalone: true }"
+                class="k-textbox w-100" noSpace (paste)="false" appBlockCopyPaste />
+        </div>
+    </div>
+    <hr>
+
+    <div class="row ml-auto">
+        <h4>I, hereby understand, that applying my electronic signature in the electronic system is equivalent to
+            utilising my hand written signature </h4>
+    </div>
+</div>

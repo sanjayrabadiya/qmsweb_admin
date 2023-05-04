@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <div class="form-row align-items-center w-100">
+        <div class="col-md-auto col-auto">
+            <h4 class="modal-title">Study Delete</h4>
+        </div>
+        <div class="col-md-auto ml-auto col">
+            <button class="btn-gray btn-add mr-2" [disabled]="isInvalid()" (click)="proceed()">
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Delete
+            </button>
+            <button class="btn-gray btn-add" (click)="close()">
+                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-12 alert alert-danger mt-3" *ngIf="data && data.message">
+            {{ data?.message }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label>Select Reason</label>
+            <ejs-combobox [dataSource]="auditReasons" [fields]="fields" [(ngModel)]="dataItem.reasonId"
+                [ngModelOptions]="{ standalone: true }" (ngModelChange)="reasonChanged($event)"
+                placeholder="Select reason" class="w-100">
+            </ejs-combobox>
+        </div>
+        <div class="form-group col-md-12" *ngIf="dataItem.isOther">
+            <label>Specify Details</label>
+            <input [(ngModel)]="dataItem.reasonOth" [ngModelOptions]="{ standalone: true }" class="k-textbox w-100"
+                noSpace />
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="label-primary">Upload Document</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="validatedCustomFile" #fileInput multiple="false"
+                    (change)="fileChange($event.target.files)">
+                <label class="custom-file-label" for="validatedCustomFile">{{selectedFileName?
+                    selectedFileName :'Choose file...'}} </label>
+            </div>
+        </div>
+    </div>
+</div>

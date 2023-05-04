@@ -1,0 +1,90 @@
+<div class="master-grid" *ngIf="!showDetails">
+    <app-projectremovelist [config]="gridConfig" (addClick)="onAdd()" (editClick)="onEdit($event)">
+    </app-projectremovelist>
+</div>
+<div class="modal-body" *ngIf="showDetails">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="form-group col-lg-2 col-md-3">
+                <label class="label-primary">Type</label>
+                <ejs-combobox [dataSource]="RemoveTypes" [fields]="fields" class="w-100" placeholder="Select Type"
+                    formControlName="Type" (change)="ChangedType($event?.itemData?.id)">
+                </ejs-combobox>
+                <span class="req-symbol-left" *ngIf="form.get('Type').hasError('required')"></span>
+                <div class="required-text" *ngIf="form.get('Type').hasError('required') && form.get('Type').touched">
+                    This field is required!
+                </div>
+            </div>
+            <div class="form-group col-lg-2 col-md-3">
+                <label class="label-primary">Company</label>
+                <ejs-combobox [dataSource]="CompanyData" [fields]="fields" class="w-100" placeholder="Select Company"
+                    formControlName="CompanyId" [disabled]="true" (change)="ChangedCompany($event?.itemData?.id)">
+                </ejs-combobox>
+                <span class="req-symbol-left" *ngIf="form.get('CompanyId').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('CompanyId').hasError('required') && form.get('CompanyId').touched">
+                    This field is required!
+                </div>
+            </div>
+            <div class="form-group col-lg-2 col-md-3">
+                <label class="label-primary">Study Code</label>
+                <ejs-combobox [dataSource]="ProjectData" [fields]="fields" class="w-100" placeholder="Select Study"
+                    formControlName="ProjectId" [disabled]="true" (select)="ChangedStudy($event?.itemData?.id)">
+                </ejs-combobox>
+                <span class="req-symbol-left" *ngIf="form.get('ProjectId').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('ProjectId').hasError('required') && form.get('ProjectId').touched">
+                    This field is required!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 col-md-2 txtcenter" *ngIf="IsShow && IsdeleteShow">
+                <label class="label-primary m-top "></label>
+                <i class="las la-check-double correct-cls" *ngIf="this.form.value.IsDatabaseBackup"></i>
+                <button type="button" [disabled]="(form.value.IsDatabaseBackup || form.value.Status == 1)"
+                    (click)="backup()" class="btn-white btn-border mr-1">
+                    <span class="btn-circle-icon btn-cicle-green">
+                        <i class="las la-database"></i>
+                    </span>
+                    Database Backup
+                </button>
+                <span *ngIf="form.value.Status == 1">In-Progress</span>
+                <span *ngIf="form.value.Status == 2">Completed</span>
+            </div>
+
+            <div class="form-group col-lg-2 col-md-2 txtcenter" *ngIf="IsShow && IsdeleteShow">
+                <label class="label-primary m-top "></label>
+                <i class="las la-check-double correct-cls" *ngIf="form.value.IsDelete"></i>
+                <button type="button" [disabled]="(form.value.IsDelete || form.value.Status == 1)" (click)="DeleteStudy()" class="btn-white btn-border mr-1">
+                    <span class="btn-circle-icon btn-cicle-green">
+                        <i class="las la-trash"></i>
+                    </span>
+                    Delete Study
+                </button>
+            </div>
+
+            <div class="form-group col-lg-2 col-md-2 txtcenter" *ngIf="IsShow && IsArchieveShow">
+                <label class="label-primary m-top "></label>
+                <i class="las la-check-double correct-cls" *ngIf="this.form.value.IsArchieve"></i>
+                <button type="button" (click)="backup()" class="btn-white btn-border mr-1"
+                    [disabled]="(form.invalid || form.pristine)">
+                    <span class="btn-circle-icon btn-cicle-green">
+                        <i class="las la-database"></i>
+                    </span>
+                    Archieve Study
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <button type="button" class="btn-white btn-border mr-1" (click)="onBack()">
+                    <span class="btn-circle-icon btn-cicle-red">
+                        <i class="las la-arrow-left"></i>
+                    </span>
+                    Back
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

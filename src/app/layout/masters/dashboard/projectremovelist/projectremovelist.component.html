@@ -1,0 +1,133 @@
+<div id="grid" class="page-layout carded fullwidth inner-scroll">
+    <div class="top-bg accent"></div>
+    <div class="center">
+        <div class="master-grid">
+            <ejs-grid #grid id='Grid' [dataSource]="List" [allowSorting]='true' [allowGrouping]='false'
+                [allowPaging]='true' [pageSettings]='pageSettings' [allowExcelExport]='true' [allowPdfExport]='true'>
+                <ng-template #toolbarTemplate>
+                    <ejs-toolbar>
+                        <e-items>
+                            <e-item>
+                                <ng-template #template>
+                                    <div class="grid-header w-100">
+                                        <div class="row overflow-x align-items-center">
+                                            <div class="col-sm-3 search-area-new">
+                                                <div class="search-wrapper-new">
+                                                    <div class="search">
+                                                        <input type="text" class="searchtext k-textbox w-100" noSpace
+                                                            placeholder="Search" [(ngModel)]="searchText"
+                                                            (input)="grid.search(searchText);" />
+                                                        <span class="fa fa-search form-control-feedback"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-auto ml-auto mobile-mt-10 white-space-nr">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-md-auto">
+                                                        <button type="button" class="btn-white btn-border mr-1 fs-14"
+                                                            (click)="addClick.emit()">
+                                                            <span class="btn-circle-icon btn-cicle-green">
+                                                                <img src="./assets/images/add.svg" />
+                                                            </span>
+                                                            Add New
+                                                        </button>
+
+
+                                                        <span class="sync-dropdown-btn">
+                                                            <span class="btn-circle-icon btn-cicle-yellow for-syn-btn">
+                                                                <i class="las la-download"></i>
+                                                            </span>
+                                                            <button ejs-dropdownbutton class="fs-14" [items]='items'
+                                                                content='Export' (select)='itemBeforeEvent($event)'>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-item>
+                        </e-items>
+                    </ejs-toolbar>
+                </ng-template>
+                <e-columns>
+                    <e-column headerText='Action' width="100">
+                        <ng-template #template let-dataItem>
+                            <div class="form-row align-items-center justify-content-center">
+                                <div class="col-md-auto">
+
+                                    <span class="badge-grid-action badge-blue mr-2"
+                                        (click)="editClick.emit(dataItem.id)">
+                                        <i class="las la-edit text-blue grd-edit-del"></i>
+                                    </span>
+                                    <a *ngIf="dataItem.path" href="{{dataItem.path}}" download>
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+
+                    <e-column field='companyName' width="150" headerText='Company'></e-column>
+                    <e-column field='studyCode' width="150" headerText='Code'></e-column>
+                    <e-column field='statusName' width="150" headerText='Status'></e-column>
+                    <e-column field='isDatabaseBackup' width="150" headerText='Database Backup'>
+                        <ng-template #template let-dataItem>
+                            <div>
+                                {{ dataItem.isDatabaseBackup ? 'Yes' : 'No'}}
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='isApplicationBackup' width="100" headerText='App. Backup'>
+                        <ng-template #template let-dataItem>
+                            <div>
+                                {{ dataItem.isApplicationBackup ? 'Yes' : 'No'}}
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field="isDocumentArchieve" width="150" headerText="Document Backup">
+                        <ng-template #template let-dataItem>
+                            <div>
+                                {{ dataItem.isDocumentArchieve ? 'Yes' : 'No'}}
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field="isArchieve" width="100" headerText="Archieve">
+                        <ng-template #template let-dataItem>
+                            <div>
+                                {{ dataItem.isArchieve ? 'Yes' : 'No'}}
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field="isDelete" width="100" headerText="Delete">
+                        <ng-template #template let-dataItem>
+                            <div>
+                                {{ dataItem.isDelete ? 'Yes' : 'No'}}
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='reasonName' width="150" headerText='Reason'></e-column>
+                    <e-column field='reasonOth' width="150" headerText='Other Reason'></e-column>
+                    <e-column field="backupDate" width="250" headerText="Backup By & Backup on">
+                        <ng-template #template let-dataItem>
+                          {{ dataItem.backupBy}} - {{ dataItem.backupDate | dateTimeFormat
+                            }}
+                        </ng-template>
+                    </e-column>
+                    <e-column field="archieveDate" width="250" headerText="Archieve By & Archieve on">
+                        <ng-template #template let-dataItem>
+                            {{ dataItem.archieveBy}} - {{ dataItem.archieveDate | dateTimeFormat }}
+                        </ng-template>
+                    </e-column>
+                    <e-column field="removeDate" width="250" headerText="Study Remove By & Study Remove on">
+                        <ng-template #template let-dataItem>
+                            {{ dataItem.removeBy}} - {{ dataItem.removeDate | dateTimeFormat }}
+                        </ng-template>
+                    </e-column>
+                </e-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>

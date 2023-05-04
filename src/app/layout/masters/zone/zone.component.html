@@ -1,0 +1,49 @@
+<div class="master-grid" *ngIf="!showDetails">
+    <app-zone-list [config]="gridConfig" (addClick)="onAdd()" (editClick)="onEdit($event)"
+        (deleteClick)="onDelete($event)"></app-zone-list>
+</div>
+<div *ngIf="showDetails">
+    <master-header title="Zone" tableName="ZoneMaster" (resetClick)="onReset()"
+        (saveClick)="onSave()" [id]="id" [formGroup]="form" (backClick)="onBack()" [screenCode]="data.screenCode">
+    </master-header>
+    <form [formGroup]="form" style="padding: 10px;">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label class="label-primary">Zone Name</label>
+                <input type="text" class="k-textbox w-100" formControlName="zoneName" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('zoneName').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">Application Path</label>
+                <input type="text" class="k-textbox w-100" formControlName="applicationPath" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('applicationPath').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">Document Path</label>
+                <input type="text" class="k-textbox w-100" formControlName="documentPath" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('documentPath').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">Archieve Path</label>
+                <input type="text" class="k-textbox w-100" formControlName="archievePath" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('archievePath').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">API Url</label>
+                <input type="text" class="k-textbox w-100" formControlName="apiUrl" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('apiUrl').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">Study Remove Upload Document Path</label>
+                <input type="text" class="k-textbox w-100" formControlName="studyRemoveUploadDoc" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('studyRemoveUploadDoc').hasError('required')"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-primary">Study Remove Download Document Path</label>
+                <input type="text" class="k-textbox w-100" formControlName="studyRemoveDownloadDocUrl" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('studyRemoveDownloadDocUrl').hasError('required')"></span>
+            </div>
+        </div>
+    </form>
+
+</div>

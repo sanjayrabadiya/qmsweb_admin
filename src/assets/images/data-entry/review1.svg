@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <g id="Group_211" data-name="Group 211" transform="translate(532 859)">
+    <g id="Rectangle_51" data-name="Rectangle 51" transform="translate(-532 -859)" fill="#fff" stroke="#ae5d00" stroke-width="2">
+      <rect width="21" height="21" rx="10.5" stroke="none"/>
+      <rect x="1" y="1" width="19" height="19" rx="9.5" fill="none"/>
+    </g>
+    <g id="eye" transform="translate(-527.174 -944.561)">
+      <g id="Group_207" data-name="Group 207" transform="translate(0 92.835)">
+        <g id="Group_206" data-name="Group 206">
+          <path id="Path_227" data-name="Path 227" d="M11.068,96.168c-.1-.136-2.47-3.333-5.5-3.333s-5.4,3.2-5.5,3.333a.368.368,0,0,0,0,.433c.1.136,2.47,3.333,5.5,3.333s5.4-3.2,5.5-3.333a.367.367,0,0,0,0-.433ZM5.569,99.2c-2.23,0-4.162-2.122-4.734-2.815.571-.694,2.5-2.815,4.734-2.815s4.162,2.121,4.734,2.815C9.732,97.079,7.8,99.2,5.569,99.2Z" transform="translate(0 -92.835)" fill="#ae5d00" stroke="#ae5d00" stroke-width="0.3"/>
+        </g>
+      </g>
+      <g id="Group_209" data-name="Group 209" transform="translate(3.366 94.181)">
+        <g id="Group_208" data-name="Group 208">
+          <path id="Path_228" data-name="Path 228" d="M156.925,154.725a2.2,2.2,0,1,0,2.2,2.2,2.2,2.2,0,0,0-2.2-2.2Zm0,3.672a1.469,1.469,0,1,1,1.469-1.469,1.469,1.469,0,0,1-1.469,1.469Z" transform="translate(-154.722 -154.725)" fill="#ae5d00" stroke="#ae5d00" stroke-width="0.3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

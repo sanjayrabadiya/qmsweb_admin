@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <div class="form-row align-items-center w-100">
+        <div class="col-md-auto col-auto">
+            <h4 class="modal-title">Study Config</h4>
+        </div>
+        <div class="col-md-auto ml-auto col">            
+            <button class="btn-gray btn-add mr-2" (click)="onSave()" [disabled]="form.invalid || form.pristine">
+                <span class="btn-circle-icon btn-cicle-green">
+                    <img src="./assets/images/check-small.svg" />
+                </span>
+                Save
+            </button>
+            <button class="btn-gray btn-add" (click)="close()">
+                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" /></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-3">
+                <label class="label-primary">Company</label>
+                <ejs-combobox [dataSource]="CompanyData" [fields]="fields" class="w-100" placeholder="Select Company"
+                    formControlName="companyId" [disabled]="true">
+                </ejs-combobox>
+                <span class="req-symbol-left" *ngIf="form.get('companyId').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('companyId').hasError('required') && form.get('companyId').touched">
+                    This field is required!
+                </div>
+            </div>
+            <div class="form-group col-lg-4 col-md-6">
+                <label class="label-primary">No of Study</label>
+                <input type="text" class="k-textbox w-100" formControlName="noofStudy" maxlength="200" numOnly noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('noofStudy').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('noofStudy').hasError('required') && form.get('noofStudy').touched">
+                    This field is required!
+                </div>
+            </div>    
+            
+            <div class="form-group col-lg-4 col-md-6">
+                <label>Valid From</label>
+                <ejs-datepicker placeholder="Valid From"  formControlName="validFrom"
+                    (valueChange)="setValidToDate($event)"></ejs-datepicker>
+            </div> 
+
+            <div class="form-group col-lg-4 col-md-6">
+                <label>Valid To</label>
+                <ejs-datepicker placeholder="Valid To" [min]='TValidTo' formControlName="validTo">
+                </ejs-datepicker>
+            </div> 
+        </div>
+    </form>
+</div>

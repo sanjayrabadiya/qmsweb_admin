@@ -1,0 +1,19 @@
+<div class="tab-stripe-main">
+  <ejs-tab #dynamicTab id="element" (selected)="onTabSelect($event)" style="margin-top: 125px;">
+    <e-tabitems>
+      <e-tabitem *ngFor="let item of tabItems;">
+        <ng-template #headerText>
+          <div class="close-btn">
+            {{ item.title }}
+            <span (click)="removeTabItem(item)" class="tab-close-btn" *ngIf="item.componentId != 'mnu_dashboard'">
+              <i class="las la-times"></i>
+            </span>
+          </div>
+        </ng-template>
+        <ng-template #content >
+          <app-dynamic-loader [item]="item" #reloadcomponet></app-dynamic-loader>
+        </ng-template>
+      </e-tabitem>
+    </e-tabitems>
+  </ejs-tab>
+</div>

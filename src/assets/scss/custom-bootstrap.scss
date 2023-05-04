@@ -1,0 +1,385 @@
+.form-contorl {
+  border-color: rgba(33, 37, 41, 0.125);
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control-feedback {
+  position: absolute;
+  right: 13px;
+  color: $text-lightgray;
+  top: 10px;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-label-bold {
+  color: $text-primary;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-control-blue {
+  background-color: lighten($color: $primary, $amount: 45%);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  display: block;
+  font-size: 20px;
+  width: auto;
+  text-align: center;
+}
+
+.control-small {
+  padding: 0px 19px;
+  font-size: 18px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.form-control-gray {
+  background-color: $control-bg;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: block;
+  font-size: 16px;
+  width: auto;
+  text-align: center;
+}
+
+.custom-card {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px #cacaca;
+}
+.card-gray {
+  background-color: #f5f5f5;
+}
+
+.table {
+  th {
+    background-color: $primary;
+    color: #fff;
+  }
+}
+.project-list-main {
+  height: calc(100vh - 270px);
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    color: $primary;
+    .la-cog {
+      color: $text-primary;
+    }
+    .la-trash-alt {
+      color: $red;
+    }
+  }
+  .nav-item {
+    font-size: 18px;
+    background-color: #ebebeb;
+    font-weight: 500;
+    color: $text-gray-normal;
+    i {
+      font-size: 18px;
+    }
+    .la-cog {
+      color: $text-gray-normal;
+    }
+    .la-trash-alt {
+      color: $text-gray-normal;
+    }
+  }
+  .card {
+    border-radius: 0;
+  }
+}
+
+.checkbox-lg {
+  .custom-control-label::before {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    pointer-events: none;
+    content: "";
+    border: #adb5bd solid 1px;
+    border-radius: 8px;
+  }
+  .custom-control-label::after {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    content: "";
+    background: no-repeat 50%/50% 50%;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: $primary;
+    background-color: $primary;
+  }
+  .custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-top: 1px;
+    color: $text-black;
+  }
+}
+
+.custom-checkbox-normal {
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: $primary;
+    background-color: $primary;
+  }
+  .custom-control-label {
+    color: $text-black;
+    font-size: 14px;
+  }
+}
+//kendo css
+
+.k-tabstrip-items .k-item {
+  color: $text-primary;
+}
+.k-tabstrip-top > .k-tabstrip-items .k-item.k-state-active {
+  font-weight: 500;
+  color: $primary;
+  .k-item {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+.k-textbox.k-invalid:focus,
+.k-textbox.k-invalid.k-state-focus,
+.k-textbox.k-invalid.k-state-focused,
+.k-textbox.k-state-invalid:focus,
+.k-textbox.k-state-invalid.k-state-focus,
+.k-textbox.k-state-invalid.k-state-focused,
+.k-textbox.ng-invalid.ng-touched:focus,
+.k-textbox.ng-invalid.ng-touched.k-state-focus,
+.k-textbox.ng-invalid.ng-touched.k-state-focused,
+.k-textbox.ng-invalid.ng-dirty:focus,
+.k-textbox.ng-invalid.ng-dirty.k-state-focus,
+.k-textbox.ng-invalid.ng-dirty.k-state-focused,
+.k-textarea.k-invalid:focus,
+.k-textarea.k-invalid.k-state-focus,
+.k-textarea.k-invalid.k-state-focused,
+.k-textarea.k-state-invalid:focus,
+.k-textarea.k-state-invalid.k-state-focus,
+.k-textarea.k-state-invalid.k-state-focused,
+.k-textarea.ng-invalid.ng-touched:focus,
+.k-textarea.ng-invalid.ng-touched.k-state-focus,
+.k-textarea.ng-invalid.ng-touched.k-state-focused,
+.k-textarea.ng-invalid.ng-dirty:focus,
+.k-textarea.ng-invalid.ng-dirty.k-state-focus,
+.k-textarea.ng-invalid.ng-dirty.k-state-focused {
+  box-shadow: none;
+}
+
+.k-textbox:focus,
+.k-textbox.k-state-focus,
+.k-textbox.k-state-focused,
+.k-textarea:focus,
+.k-textarea.k-state-focus,
+.k-textarea.k-state-focused {
+  box-shadow: none;
+}
+
+
+//panels
+.panel-default {
+  background-color: transparent;
+  padding: 15px;
+}
+
+.panel-primary {
+  background-color: lighten($color: $primary, $amount: 53%);
+  border: 1px solid $primary;
+  border-radius: 5px;
+  padding: 15px;
+  .panel-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $text-secondary;
+    margin-bottom: 0.75rem;
+  }
+}
+.panel-gray {
+  background-color: $modal-bg;
+  border: 1px solid $modal-bg;
+  border-radius: 5px;
+  padding: 15px;
+  .panel-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $text-secondary;
+    margin-bottom: 0.75rem;
+  }
+}
+.comment-bg {
+  background-color: $modal-bg;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.list-alternate-arrow {
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      cursor: pointer;
+      padding: 10px 10px;
+      border-radius: 5px;
+      padding-right: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+      &::after {
+        position: absolute;
+        font-family: "FontAwesome";
+        content: "";
+        font-size: 25px;
+        color: $primary;
+        right: 30px;
+        margin-top: -8px;
+      }
+    }
+    li:nth-child(even) {
+      background-color: lighten($color: $primary, $amount: 50%);
+      color: $text-primary;
+    }
+  }
+}
+
+.desing-setup-dropdown {
+  .dropdown-menu.show {
+    width: 170px;
+    display: inline-block;
+    top: -42px !important;
+    left: -33px !important;
+  }
+  .dropdown-item {
+    text-align: center;
+    padding: .25rem .5rem;
+    display: inline-block;
+    width: 40px;
+  }
+}
+
+
+#treeparent {
+  display: block;
+  max-width: 400px;
+  max-height: 320px;
+  margin: auto;
+  overflow: auto;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+.e-treeview .e-list-img {
+  width: 25px;
+  height: 25px;
+}
+.e-treeview .e-list-icon {
+  background-repeat: no-repeat;
+  background-image: url(https://ej2.syncfusion.com/javascript/demos/src/treeview/images/icons/file_icons.png);
+  height: 20px;
+}
+
+.report-accordian {
+  .report-icon {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 18px;
+    img {
+      max-height: 120px;
+    }
+  }
+  #accordion .card-body {
+    min-height: 130px;
+  }
+  #accordion a.accordion-toggle::before,
+  #accordion a[data-toggle="collapse"]::before {
+    content: "\e113";
+    margin-right: 10px;
+    content: "";
+    background-image: url(../images/down-arrow-accordian.svg);
+    background-size: 100%;
+    height: 16px;
+    width: 16px;
+    margin-top: 0;
+    float: left;
+    margin-top: 3px;
+    transform: rotate(180deg);
+  }
+  #accordion a.accordion-toggle.collapsed::before,
+  #accordion a.collapsed[data-toggle="collapse"]::before {
+    margin-right: 10px;
+    content: "";
+    background-image: url(../images/down-arrow-accordian.svg);
+    background-size: 100%;
+    height: 16px;
+    width: 16px;
+    margin-top: 0;
+    float: left;
+    margin-top: 3px;
+    transform: rotate(0deg);
+  }
+}
+.e-treeview .e-list-icon.folder { background-position: -10px -552px }
+.e-treeview .e-list-icon.audio { background-position: -10px -244px }
+.e-treeview .e-list-icon.video { background-position: -10px -272px }
+.e-treeview .e-list-icon.order { background-position: -10px -272px }
+.e-treeview .eicon { font-size: 21px; }
+
+.screening-status {
+  width: 35%;
+  text-align: right;
+  font-size: 12px;
+}
+
+.notification-width {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.e-dropdown-popup ul .e-item .e-menu-icon {
+  color: none;
+}
+
+.if-noicons .variable-combo .k-dropdown-wrap .k-clear-value {
+  display: none;
+}
+
+.tbl-screening{
+  width: 100%; 
+  padding: 5px; 
+  background: #c9dee8
+}
+
+.screening-dot {
+  height: 15px;
+  width: 15px;
+  float: left;
+  border-radius: 15px;
+  margin-right: 5px;
+}
+.case-record-panel {
+  height: calc(100vh - 400px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}

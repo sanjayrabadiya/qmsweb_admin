@@ -1,0 +1,311 @@
+<div class="master-grid" *ngIf="!showDetails">
+    <app-dashbordlist [config]="gridConfig" (addClick)="onAdd()" (editClick)="onEdit($event)"
+        (deleteClick)="onDelete($event)"></app-dashbordlist>
+</div>
+<div class="client-master-icons" *ngIf="showDetails">
+    <ejs-tab id="element" (selecting)="select($event)" (selected)="selected($event)">
+        <e-tabitems>
+            <e-tabitem [header]='headerText[0]'>
+                <ng-template #content>
+                    <div class="row mt-3">
+                        <form [formGroup]="form">
+                            <div class="col-md">
+                                <div class="row">
+                                    <div class="form-group col-lg-4 col-md-6">
+                                        <label class="label-primary">Company Code</label>
+                                        <input type="text" class="k-textbox w-100" formControlName="companyCode"
+                                            maxlength="200" noSpace />
+                                        <span class="req-symbol-left"
+                                            *ngIf="form.get('companyCode').hasError('required')"></span>
+                                        <div class="required-text"
+                                            *ngIf="form.get('companyCode').hasError('required') && form.get('companyCode').touched">
+                                            This field is required!
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-6">
+                                        <label class="label-primary">Company Name</label>
+                                        <input type="text" class="k-textbox w-100" formControlName="companyName"
+                                            maxlength="200" noSpace />
+                                        <span class="req-symbol-left"
+                                            *ngIf="form.get('companyName').hasError('required')"></span>
+                                        <div class="required-text"
+                                            *ngIf="form.get('companyName').hasError('required') && form.get('companyName').touched">
+                                            This field is required!
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-6">
+                                        <label class="label-primary">Phone</label>
+                                        <input type="text" class="k-textbox w-100" formControlName="phone"
+                                            maxlength="13" numOnly noSpace />
+                                        <span class="req-symbol-left"
+                                            *ngIf="form.get('phone').hasError('required')"></span>
+                                        <div class="required-text"
+                                            *ngIf="form.get('phone').hasError('required') && form.get('phone').touched">
+                                            This field is required!
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-8 col-md-6">
+                                        <label class="label-primary">Address</label>
+                                        <input type="text" class="k-textbox w-100" formControlName="address"
+                                            maxlength="200" noSpace />
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-6">
+                                        <label>Email ID</label>
+                                        <input type="text" class="w-100 k-textbox" formControlName="email"
+                                            maxlength="200" noSpace />
+                                        <span class="req-symbol-left"
+                                            *ngIf="form.get('email').hasError('required')"></span>
+                                        <div class="required-text"
+                                            *ngIf="form.get('email').hasError('required') && form.get('email').touched">
+                                            This field is required!
+                                        </div>
+                                        <div class="required-text" *ngIf="form.get('email').hasError('email')">
+                                            This field is not valid value!
+                                        </div>
+                                    </div>
+
+                                   
+
+                                    <div class="form-group col-md-3">
+                                        <label class="label-primary">Select Zone</label>
+                                        <ejs-combobox [dataSource]="zoneList" formControlName="zoneMasterId"
+                                            [fields]="fields" [allowCustom]="false" placeholder="Select Zone"
+                                            [allowFiltering]='true' filterType='Contains'>
+                                        </ejs-combobox>
+                                        <span class="req-symbol-left"
+                                            *ngIf="form.get('zoneMasterId').hasError('required')"></span>
+                                    </div>
+
+                                    <div class="form-group col-lg-12 col-md-6">
+                                        <div class="custom-control custom-radio">
+                                            <label>
+                                                <input id="onprimise" type="radio" value=1 (change)="changeType(1)"
+                                                    checked="true" formControlName="type">
+                                                <span> On Premise</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <label>
+                                                <input id="oncloud" type="radio" value=2 (change)="changeType(2)"
+                                                    formControlName="type">
+                                                <span> On Cloud</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn-white btn-border mr-1" (click)="onSave()"
+                                [disabled]="form.invalid || form.pristine">
+                                <span class="btn-circle-icon btn-cicle-green">
+                                    <img src="./assets/images/add.svg" />
+                                </span>
+                                Save & Continue
+                            </button>
+                            <button type="button" class="btn-white btn-border mr-1" (click)="onReset()">
+                                <span class="btn-circle-icon btn-cicle-blue">
+                                    <i class="las la-sync-alt"></i>
+                                </span>
+                                Reset
+                            </button>
+                            <button type="button" class="btn-white btn-border mr-1" (click)="onBack()">
+                                <span class="btn-circle-icon btn-cicle-red">
+                                    <i class="las la-arrow-left"></i>
+                                </span>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-tabitem>
+            <e-tabitem [header]='headerText[1]' [visible]=headerText[1].visible>
+                <ng-template #content>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <app-databaseconfig [data]='commanddata' (onBackClick)='onBack()'></app-databaseconfig>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-tabitem>
+            <e-tabitem [header]='headerText[2]' [visible]=headerText[2].visible>
+                <ng-template #content>
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <button type="button" class="btn-white btn-border mr-1" (click)="onBack()">
+                                <span class="btn-circle-icon btn-cicle-red">
+                                    <i class="las la-arrow-left"></i>
+                                </span>
+                                Back
+                            </button>
+                            <button type="button" class="btn-white btn-border mr-1" (click)="saveCompanyfeatures()">
+                                <span class="btn-circle-icon btn-cicle-green">
+                                    <img src="./assets/images/add.svg" />
+                                </span>
+                                Save
+                            </button>
+                            <div class="form-row role-mgmt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                Permissions
+                            </div>
+                            <div class="card-body">
+                                <ejs-treeview #treeview="" id='treeelement' [fields]='rolefield'
+                                    [showCheckBox]='showCheckBox' (nodeChecked)='nodeChecked($event)'></ejs-treeview>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </ng-template>
+            </e-tabitem>
+
+            <e-tabitem [header]='headerText[4]' [visible]=headerText[4].visible>
+                <ng-template #content>
+                    <app-studyconfig-premise [data]='commanddata' (onBackClick)='onBack()'></app-studyconfig-premise>
+                </ng-template>
+            </e-tabitem>
+
+  <!-- Chirag -->
+            <e-tabitem [header]='headerText[5]' [visible]=headerText[5].visible>
+                <ng-template #content>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="grid" class="page-layout carded fullwidth inner-scroll">
+                                <div class="top-bg accent"></div>
+                                <div class="center">
+                                    <!-- <div class="modal-header">
+                                        <div class="form-row align-items-center w-100">
+                                            <div class="col-md-auto col-auto">
+                                                <h4 class="modal-title">Study Config</h4>
+                                            </div>
+                                            <div class="col-md-auto ml-auto col"> 
+                                                <button type="button" class="btn-white btn-border mr-1"
+                                                (click)="onBackClick.emit()">
+                                                <span class="btn-circle-icon btn-cicle-red">
+                                                    <i class="las la-arrow-left"></i>
+                                                </span>
+                                                Back
+                                               </button>           
+                                               
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="master-grid">
+                                        <ejs-grid #grid id='Grid' allowTextWrap='true' [dataSource]="List1"
+                                        [allowSorting]='true' [allowGrouping]='false' [allowPaging]='true'
+                                        [pageSettings]='pageSettings' [allowExcelExport]='true' [allowPdfExport]='true'>
+                                        <ng-template #toolbarTemplate>
+                                            <ejs-toolbar>
+                                                <e-items>
+                                                    <e-item>
+                                                        <ng-template #template>
+                                                           
+                                                            <div class="grid-header w-100">
+                                                                <div class="row overflow-x align-items-center">
+                                                                    <div class="col-sm-3 search-area-new">
+                                                                        <div class="search-wrapper-new">
+                                                                            <div class="search">
+                                                                                <input type="text" class="searchtext k-textbox w-100" noSpace
+                                                                                    placeholder="Search" [(ngModel)]="searchText"
+                                                                                    (input)="grid.search(searchText);" />
+                                                                                <span class="fa fa-search form-control-feedback"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-auto ml-auto mobile-mt-10 white-space-nr">
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-md-auto">
+                                                                                <button type="button" class="btn-white btn-border mr-1 fs-14"
+                                                                                (click)="openCompanyPopup(null)">
+                                                                                    <span class="btn-circle-icon btn-cicle-green">
+                                                                                        <img src="./assets/images/add.svg" />
+                                                                                    </span>
+                                                                                    Add New
+                                                                                </button>
+                            
+                                                                                <button type="button" class="btn-white btn-border mr-1"
+                                                                                (click)="onBackClick.emit()">
+                                                                                <span class="btn-circle-icon btn-cicle-red">
+                                                                                    <i class="las la-arrow-left"></i>
+                                                                                </span>
+                                                                                Back
+                                                                               </button>
+                                                                                <!-- <span class="sync-dropdown-btn">
+                                                                                    <span class="btn-circle-icon btn-cicle-yellow for-syn-btn">
+                                                                                        <i class="las la-download"></i>
+                                                                                    </span>
+                                                                                    <button ejs-dropdownbutton class="fs-14" [items]='items'
+                                                                                        content='Export' (select)='itemBeforeEvent($event)'>
+                                                                                    </button>
+                                                                                </span> -->
+                                                                            </div>
+                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="col-md-auto">
+                                                                <ejs-checkbox label="Show Deactivated Records" class="ml-2 d-flex"
+                                                                    [(ngModel)]="isDeleted" (ngModelChange)="onDeleteChange($event)">
+                                                                </ejs-checkbox>
+                                                            </div> -->
+                                                        </ng-template>
+                                                    </e-item>
+                                                </e-items>
+                                            </ejs-toolbar>
+                                        </ng-template>
+                                        <e-columns>
+                                            <e-column headerText='Action' width='100'>
+
+                                                <ng-template #template let-dataItem >
+                                                    <div class="form-row align-items-center justify-content-center">
+                                                        <div class="col-md-auto">   
+                                                    <span class="badge-grid-action badge-blue mr-2" *ngIf="!dataItem.isDeleted"
+                                                        (click)="openCompanyPopup(dataItem)">
+                                                        <i class="las la-edit text-blue grd-edit-del"></i>
+                                                    </span>
+                                                    <span class="badge-grid-action badge-blue mr-2" *ngIf="!dataItem.isDeleted"
+                                                        (click)="DeleteCompnay(dataItem)">
+                                                        <i class="las la-trash text-red grd-edit-del"></i>
+                                                    </span>
+                                                  
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </e-column>
+                                           
+                                            <e-column field="childcompanyCode" headerText="Company Code" width='170'></e-column>
+                                            <e-column field="childcompanyName" headerText="Company" width='180'>
+                                            </e-column>
+                                            <e-column field="childaddress" headerText="Address" width='180'>
+                                            </e-column>
+                                            <e-column field="childemail" headerText="Email"
+                                                width='170'></e-column>
+                                            <e-column field="childphone" headerText="Phone"
+                                                width='190'></e-column>
+                                            
+                                            
+                                           
+                                        </e-columns>
+                                    </ejs-grid>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </ng-template>
+            </e-tabitem>
+
+
+        </e-tabitems>
+    </ejs-tab>
+</div>

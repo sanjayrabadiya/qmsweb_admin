@@ -1,0 +1,5 @@
+<app-header></app-header>
+<app-menubar (itemClicked)="container.addTabItem($event)"></app-menubar>
+<div class="main-container">
+  <div class="content-area"><app-dynamic-container #container></app-dynamic-container></div>
+</div>

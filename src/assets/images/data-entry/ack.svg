@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <g id="Group_4" data-name="Group 4" transform="translate(-670 -528)">
+    <g id="Group_2" data-name="Group 2" transform="translate(30 -2)">
+      <g id="Group_211" data-name="Group 211" transform="translate(1172 1389)">
+        <g id="Rectangle_51" data-name="Rectangle 51" transform="translate(-532 -859)" fill="#fff" stroke="#887f00" stroke-width="2">
+          <rect width="21" height="21" rx="10.5" stroke="none"/>
+          <rect x="1" y="1" width="19" height="19" rx="9.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="letter" transform="translate(676 451.522)">
+      <g id="Group_3" data-name="Group 3" transform="translate(0 83.478)">
+        <path id="Path_1" data-name="Path 1" d="M8.334,83.478H.9a.905.905,0,0,0-.9.9V88.8a.905.905,0,0,0,.9.9h7.43a.905.905,0,0,0,.9-.9V84.382A.905.905,0,0,0,8.334,83.478Zm-.024.6L4.832,87.558a.3.3,0,0,1-.426,0L.928,84.08ZM.6,88.775V84.607l2.084,2.084Zm.526.326,1.984-1.984.867.867a.9.9,0,0,0,1.278,0l.867-.867L8.109,89.1Zm7.507-.326L6.551,86.691l2.084-2.084v4.169Z" transform="translate(0 -83.478)" fill="#887f00" stroke="#887f00" stroke-width="0.4"/>
+      </g>
+    </g>
+  </g>
+</svg>
