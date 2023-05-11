@@ -35,7 +35,7 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
   displayType = 1;
   public commanddata;
   pageSize = 20;
-  public fields: Object = { text: 'zoneName', value: 'id' };
+  public fields: Object = { text: 'zoneName', value: 'id', visible: true };
   zoneList: ZoneModel[];
   public currentStep = 0
   isDeleted: boolean = false;

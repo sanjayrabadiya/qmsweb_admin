@@ -2,13 +2,13 @@
   <div (clickOutside)="visability = false; hideMenu.emit()" [exclude]="'.excludeMainMenu'">
     <div class="menu-title">MENU</div>
     <div class="parent-nav">
-      <!-- <ul class="navbar-nav">
+      <ul class="navbar-nav">
         <li *ngFor="let module of modules" class="nav-item active" (click)="loadLazyModue(module)">
           <a class="nav-link">
             <i class="fa {{ module.icon }}"></i>
             <span>{{ module.name }}</span></a>
         </li>
-      </ul> -->
+      </ul>
     </div>
     <div class="second-level-sidebar" *ngIf="visability">
       <span class="close-btn" (click)="visability = false">

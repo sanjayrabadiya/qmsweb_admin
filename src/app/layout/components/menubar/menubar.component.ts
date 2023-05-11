@@ -34,8 +34,8 @@ export class MenubarComponent implements OnInit {
   constructor(private breadcrumbDataService: BreadcrumbService) { }
 
   ngOnInit(): void { 
-    // this.breadcrumbDataService.mainMenu.subscribe(mainMenu => this.mainMenu = mainMenu)
-    // this.breadcrumbDataService.subMenu.subscribe(subMenu => this.subMenu = subMenu)
+    this.breadcrumbDataService.mainMenu.subscribe(mainMenu => this.mainMenu = mainMenu)
+    this.breadcrumbDataService.subMenu.subscribe(subMenu => this.subMenu = subMenu)
   }
   toggleMenu() {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';

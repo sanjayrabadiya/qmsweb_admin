@@ -58,9 +58,9 @@ export class MastersModule { }
 export const menuItems: ComponentTabItem[] = [
   //new ComponentTabItem(ClientComponent, 'mnu_client', 'Client', null,null,'Masters'),
   new ComponentTabItem(DashboardComponent, 'mnu_dashboard', 'Dashboard', null, null, 'Masters'),
-  // new ComponentTabItem(ProjetRemoveComponent, 'mnu_projectremoveas', 'Study remove', null, null, 'Masters'),
-  // new ComponentTabItem(ZoneComponent, 'mnu_zone', 'Zone', null, null, 'Masters'),
-  // new ComponentTabItem(StudyconfigListComponent, 'mnu_studyconfig', 'Licensing', null, null, 'Masters'),
-  // new ComponentTabItem(LoginPreferenceListComponent, 'mnu_loginpreference', 'Login Preference', null, null, 'Masters')
+  new ComponentTabItem(ProjetRemoveComponent, 'mnu_projectremoveas', 'Study remove', null, null, 'Masters'),
+  new ComponentTabItem(ZoneComponent, 'mnu_zone', 'Zone', null, null, 'Masters'),
+  new ComponentTabItem(StudyconfigListComponent, 'mnu_studyconfig', 'Licensing', null, null, 'Masters'),
+  new ComponentTabItem(LoginPreferenceListComponent, 'mnu_loginpreference', 'Login Preference', null, null, 'Masters')
   
 ];
