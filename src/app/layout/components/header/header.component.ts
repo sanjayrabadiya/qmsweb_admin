@@ -10,25 +10,31 @@ import { ComponentTabItem } from '../../dynamic-loading/dynamic-loading.models';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent extends Destroyer implements OnInit {
   currentUser: CurrentUserModel;
   showRoles = false;
+  public menuItems: MenuItemModel[] = [];
+  userName: string;
+  roleName: string;
   @ViewChild('menu') private menuObj: MenuComponent;
 
-  public menuItems: MenuItemModel[] = [
-    {
-      text: '', iconCss: 'img-profile rounded-circle',
-      items: [
-        { text: 'Profile', iconCss: 'las la-user-circle' },
-        { text: 'Settings', iconCss: 'las la-cog' },
-        { text: 'Change Password', iconCss: 'las la-lock' },
-        { separator: true },
-        { text: 'Logout', iconCss: 'las la-sign-out-alt' }
-      ]
-    }
-  ];
+
+  // public menuItems: MenuItemModel[] = [
+  //   {
+  //     text: this.userName + '\n' + this.roleName,
+  //     iconCss: 'img-profile rounded-circle las la-user-circle',
+  //     items: [
+  //       //{ text: 'Profile', iconCss: 'las la-user-circle' },
+  //      // { text: 'Settings', iconCss: 'las la-cog' },
+  //       { text: 'Change Password', iconCss: 'las la-lock' },
+  //       { separator: true },
+  //       { text: 'Logout', iconCss: 'las la-sign-out-alt' }
+  //     ]
+  //   }
+  // ];
 
   constructor(private utils: UtilityService, private dialog: NgbModal, private router: Router) {
     super();
@@ -36,6 +42,22 @@ export class HeaderComponent extends Destroyer implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.utils.storage.CurrentUser;
+    this.userName = this.currentUser.userName;
+    this.roleName = this.currentUser.roleName;
+    this.menuItems = [
+      {
+        text: this.userName ,
+        //iconCss: 'img-profile rounded-circle',
+        items: [
+          //Smit
+          // { text: 'Profile', iconCss: 'las la-user-circle' },
+          // { text: 'Settings', iconCss: 'las la-cog' },
+          { text: 'Change Password', iconCss: 'las la-lock' },
+          //{ separator: true },
+          { text: 'Logout', iconCss: 'las la-sign-out-alt' }
+        ]
+      }
+    ];
   }
 
   logout() {
@@ -95,14 +117,14 @@ export class HeaderComponent extends Destroyer implements OnInit {
     //   rolename.push({ text: element.value, id: 'Role_' + element.id.toString() });
     // });
 
-    let insertItem: { [key: string]: Object }[] = [
-      {
-        text: 'Role', iconCss: 'las la-file-alt',
-        items: rolename
-      }
-    ];
+    // let insertItem: { [key: string]: Object }[] = [
+    //   {
+    //     text: 'Role', iconCss: 'las la-file-alt',
+    //     items: rolename
+    //   }
+    // ];
     //Add items before to 'Oceania'
-    this.menuObj.insertBefore(insertItem, 'Change Password', false);
+    //this.menuObj.insertBefore(insertItem, 'Change Password', false);
   }
 
 }

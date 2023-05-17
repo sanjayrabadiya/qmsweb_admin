@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+.info-data {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    z-index: 111;
+    left: 20px;
+    top: 0;
+
+    table {
+        width: 360px;
+        background-color: #fff;
+
+        th {
+            background-color: #3783b5;
+            color: #ffff;
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 200px;
+        }
+    }
+}
+
+.info-visit {
+    position: relative;
+    margin-left: 6px;
+    margin-top: -3px;
+
+    img:hover+.info-data {
+        display: block;
+        font-size: 13px;
+        cursor: pointer;
+        z-index: 1000000;
+    }
+}
+
+@media only screen and (min-width: 319px) and (max-width: 768px) {
+    .info-data {
+        display: none;
+        position: fixed;
+        background-color: #fff;
+        z-index: 111;
+        right: 0;
+        top: 0;
+
+        table {
+            width: 100%;
+        }
+    }
+}
+
+.fitness-fit {
+    width: 100%;
+    border-bottom: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: #F8F8F8;
+    cursor: pointer;
+}

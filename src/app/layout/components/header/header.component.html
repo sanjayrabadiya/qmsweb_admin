@@ -47,18 +47,17 @@
       <li class="nav-item dropdown">
         <a class="nav-link cursor-pointer">
           <div class="form-row text-right align-items-center">
-            <div class="col-md-auto">
-              <span class="mr-1 lh-17 d-none d-lg-block font-weight-600">{{ currentUser.userName }}</span>
-              <span class="mr-1 lh-17 d-none d-lg-block text-right role">{{ currentUser.roleName }}</span>
-            </div>
-            <div class="col-md-auto px-0 heaer-menu">
-              <ejs-menu #menu [items]='menuItems' showItemOnClick='true' (select)='select($event)'
-                (created)='created()'></ejs-menu>
-            </div>    
-             <div class="col-md-auto">
-              <img class="img-profile rounded-circle" [src]="currentUser.userPicUrl" />
+            <div class="user-menu">
+              <div class="user-drp">
+                <ejs-menu #menu [items]='menuItems' cssClass="header-user-dropdown" showItemOnClick='true'
+                  (select)='select($event)' (created)='created()'>
+                </ejs-menu>
+              </div>
             </div>
           </div>
+         
+
+
         </a>
         <!-- <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
           <li>
