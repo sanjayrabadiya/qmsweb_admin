@@ -3,9 +3,9 @@ import { BaseApiService } from 'src/app/core/services/base-api.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { MasterGridConfig, MasterGridComponent } from '../components/master-grid/master-grid.component';
 import { FormGroup } from '@angular/forms';
-import { ViewChild, Input } from '@angular/core';
+import { ViewChild, Input, Directive } from '@angular/core';
 import { DynamicComponent } from 'src/app/layout/dynamic-loading/dynamic-loading.models';
-
+@Directive()
 export abstract class MasterPage<T> extends Destroyer implements DynamicComponent {
   id: number;
   form: FormGroup;

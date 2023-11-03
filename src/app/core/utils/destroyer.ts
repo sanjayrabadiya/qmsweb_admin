@@ -1,7 +1,8 @@
 import { Subscription } from "rxjs";
-import { OnDestroy } from "@angular/core";
+import { Directive, OnDestroy } from "@angular/core";
 import { SubSink } from "subsink";
 
+@Directive()
 export class Destroyer implements OnDestroy {
   private subSink = new SubSink();
   set subs(value: Subscription) {

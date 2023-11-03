@@ -78,7 +78,7 @@ export class GridDataBindingDirective implements OnInit, OnDestroy {
   //   return items;
   // }
 }
-
+@Directive()
 export class GridDataBinding {
   @ViewChild(GridDataBindingDirective)
   private gridDataBindingDirective: GridDataBindingDirective;
