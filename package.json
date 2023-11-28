@@ -60,7 +60,6 @@
     "ngx-drag-drop": "^2.0.0",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-pagination": "^6.0.3",
-    "ngx-smart-modal": "^14.0.2",
     "ngx-toastr": "^17.0.2",
     "ngx-webcam": "^0.4.1",
     "npm": "^10.2.0",
