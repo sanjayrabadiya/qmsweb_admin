@@ -13,7 +13,7 @@
            </button>
            <button class="btn-gray btn-add mr-2" (click)="onCreate()" [disabled]="form.invalid || form.pristine" *ngIf='!editing'>
             <span class="btn-circle-icon btn-cicle-green">
-                <img src="./assets/images/check-small.svg" />
+                <img src="./assets/images/check-small.svg" alt="check-small.svg"/>
             </span>
             CreateDatabase
            </button>
@@ -25,13 +25,13 @@
             </button> -->
             <button class="btn-gray btn-add mr-2" (click)="onSave()" [disabled]="validate" *ngIf='!editing'>
                 <span class="btn-circle-icon btn-cicle-green">
-                    <img src="./assets/images/check-small.svg" />
+                    <img src="./assets/images/check-small.svg" alt="check-small.svg" />
                 </span>
                 Update
             </button>  
             <button class="btn-gray btn-add mr-2" (click)="onEdit()" *ngIf='editing'>
                 <span class="btn-circle-icon btn-cicle-green">
-                    <img src="./assets/images/check-small.svg" />
+                    <img src="./assets/images/check-small.svg" alt="check-small.svg" />
                 </span>
                 Edit
             </button>  

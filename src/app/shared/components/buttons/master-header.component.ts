@@ -37,7 +37,7 @@ import { AuditDeleteReasonComponent } from '../audit/audit-delete-reason/audit-d
               [disabled]="formGroup.invalid || formGroup.pristine"
             >
               <span class="btn-circle-icon btn-cicle-green">
-                <img src="./assets/images/check-small.svg" />
+                <img src="./assets/images/check-small.svg"  alt="check-small.svg"/>
               </span>
               Save
             </button>
