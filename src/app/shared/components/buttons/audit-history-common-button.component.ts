@@ -8,7 +8,7 @@ import { AuditHistoryCommonComponent } from '../audit/audit-history-common/audit
   template: `
     <button type="button" class="btn-white btn-border mr-1 fs-14" (click)="onClick()" [disabled]="disabled">
       <span class="btn-circle-icon btn-cicle-blue">
-        <img src="./assets/images/audit-icon.svg" />
+        <img src="./assets/images/audit-icon.svg"  alt="audit-icon.svg" />
       </span>
       {{ text || 'Audit' }}
     </button>

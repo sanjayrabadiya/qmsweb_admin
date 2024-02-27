@@ -249,7 +249,7 @@
 
       &::after {
         position: absolute;
-        font-family: "FontAwesome";
+        font-family: "FontAwesome", sans-serif;
         content: "";
         font-size: 25px;
         color: $primary;
@@ -314,14 +314,12 @@
   }
   #accordion a.accordion-toggle::before,
   #accordion a[data-toggle="collapse"]::before {
-    content: "\e113";
     margin-right: 10px;
     content: "";
     background-image: url(../images/down-arrow-accordian.svg);
     background-size: 100%;
     height: 16px;
     width: 16px;
-    margin-top: 0;
     float: left;
     margin-top: 3px;
     transform: rotate(180deg);
@@ -334,7 +332,6 @@
     background-size: 100%;
     height: 16px;
     width: 16px;
-    margin-top: 0;
     float: left;
     margin-top: 3px;
     transform: rotate(0deg);

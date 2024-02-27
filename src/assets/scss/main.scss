@@ -535,6 +535,7 @@ section {
   background-color: #458aca;
   color: #fff;
   padding: 10px 0;
+  margin-top: 0 !important;
 }
 
 .available-variable {
@@ -613,10 +614,6 @@ section {
   background: white;
   border-radius: 0px;
   overflow: hidden;
-}
-
-.custom-grid-header {
-  margin-top: 0 !important;
 }
 
 .template-box {

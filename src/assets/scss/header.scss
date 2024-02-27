@@ -69,8 +69,7 @@
   .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
     padding-right: 0.5rem;
-    color: #6c757d;
-    font-family: fontAwesome;
+    font-family: "fontAwesome", sans-serif;
     content: "\f054";
     font-size: 0.6rem;
     color: $primary;
@@ -328,7 +327,6 @@
 
   .back-btn {
     height: 35px;
-    padding-top: 20px;
     width: 35px;
     padding: 8px;
     margin-top: 30px;
@@ -349,7 +347,6 @@
     font-size: 14px;
     padding: 10px 25px;
     font-weight: 500;
-    margin-right: 20px;
     border-radius: 5px;
     margin: 10px;
     text-transform: uppercase;
