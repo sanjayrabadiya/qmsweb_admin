@@ -214,7 +214,7 @@ label {
 .k-stepper .k-step-done.k-step-hover .k-step-indicator {
   background-color: $primary;
 }
-//filter-area
+
 .filter-area {
   position: absolute;
   background-color: $white;
@@ -487,8 +487,6 @@ label {
   }
 }
 
-///sync
-
 .e-milestone-bottom {
   top: 0 !important;
 }
@@ -741,9 +739,6 @@ label {
     height: calc(100vh - 328px) !important;
   }
 }
-
-//pager style
-
 .e-pager div.e-parentmsgbar {
   padding-bottom: 4px;
   padding-top: 4px;
@@ -770,9 +765,6 @@ label {
 .e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
   padding: 7px 11px 9px 11px;
 }
-//End pager style
-
-//Grid Word Break Auto
 .e-grid.e-responsive .e-headercelldiv {
   text-overflow: unset;
   white-space: normal;
@@ -787,9 +779,6 @@ label {
 .e-grid .e-detailheadercell {
   padding: 5px 8px 5px;
 }
-
-//End Grid Word Break Auto
-//other
 .data-capture-grid {
   .e-table .e-rowcell:nth-child(2) {
     background-color: #e5e5e5 !important;

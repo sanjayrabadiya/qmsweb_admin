@@ -10,8 +10,7 @@ import { inputs } from '@syncfusion/ej2-angular-grids/src/grid/grid.component';
 
 @Component({
   selector: 'app-child-company',
-  templateUrl: './child-company.component.html',
-  styleUrls: ['./child-company.component.scss']
+  templateUrl: './child-company.component.html'
 })
 export class ChildCompanyComponent extends Destroyer implements OnInit{
   form: FormGroup;
