@@ -15,8 +15,7 @@ import { Constant } from 'src/app/core/constants/constants';
 
 @Component({
   selector: 'app-child-companylist',
-  templateUrl: './child-companylist.component.html',
-  styleUrls: ['./child-companylist.component.scss']
+  templateUrl: './child-companylist.component.html'
 })
 export class ChildCompanylistComponent extends GridDataBinding implements OnInit {
 

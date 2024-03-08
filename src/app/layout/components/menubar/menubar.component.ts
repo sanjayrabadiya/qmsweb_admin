@@ -6,7 +6,6 @@ import{BreadcrumbService} from './breadcrumb.service'
 @Component({
   selector: 'app-menubar',
   templateUrl: './menubar.component.html',
-  styleUrls: ['./menubar.component.scss'],
   animations: [
     trigger('slideInOut', [
       state(

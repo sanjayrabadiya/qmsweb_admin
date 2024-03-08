@@ -98,11 +98,9 @@
 }
 .dropdown-submenu > .dropdown-menu {
   top: 0;
-  left: -10rem; /* 10rem is the min-width of dropdown-menu */
+  left: -10rem; 
   margin-top: -6px;
 }
-
-/* rotate caret on hover */
 .dropdown-menu > li > a:hover:after {
   text-decoration: underline;
   transform: rotate(-90deg);
@@ -115,8 +113,6 @@
 .dropdown-toggle-img::after {
   display: none !important;
 }
-
-//new sidebar
 .st-container,
 .st-pusher,
 .st-content {
@@ -206,7 +202,6 @@
   transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 }
 
-/* Effect 1: Slide in on top */
 .st-effect-1.st-menu {
   visibility: visible;
   -webkit-transform: translate3d(-100%, 0, 0);
@@ -275,8 +270,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); /* for IE 9 */
-    -webkit-transform: translate(-50%, -50%); /* for Safari */
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); 
     min-width: 700px;
   }
   .login-logo {

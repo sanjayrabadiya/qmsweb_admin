@@ -22,7 +22,6 @@
 @import "buttons.scss";
 @import "variables.scss";
 @import "header.scss";
-@import "footer.scss";
 @import "custom-bootstrap.scss";
 html {
   scroll-behavior: smooth;
@@ -45,16 +44,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 6px; /* width of the entire scrollbar */
+  width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #eaeaea; /* color of the tracking area */
+  background: #eaeaea; 
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 0; /* creates padding around scroll thumb */
+  background-color: #ccc; 
+  border-radius: 20px; 
+  border: 0; 
 }
 :root {
   scrollbar-color: #ccc #eaeaea !important;
@@ -168,8 +167,6 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
 }
-
-//font-size and weight
 
 .fs-11 {
   font-size: 11px;
@@ -353,8 +350,6 @@ section {
 .float_right {
   float: right;
 }
-
-//bg-colors
 .bg-gray {
   background-color: $modal-bg;
 }
@@ -365,14 +360,11 @@ section {
 .font-weight-semibold {
   font-weight: 600;
 }
-//content-area
 .bg-light-gray {
   background: $bg-light-gray 0% 0% no-repeat padding-box;
   border-radius: 10px 11px 10px 10px;
   padding: 20px;
 }
-
-//panels
 .panel-default {
   background-color: transparent;
   padding: 15px;
@@ -402,7 +394,7 @@ section {
     margin-bottom: 0.75rem;
   }
 }
-//borders
+
 .border-left-0 {
   border-left: 0;
 }
@@ -415,7 +407,7 @@ section {
 .border-bottom-0 {
   border-bottom: 0;
 }
-//require filed css
+
 .required-text {
   color: $red;
   font-size: 12px;

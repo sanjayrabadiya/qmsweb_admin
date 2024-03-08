@@ -9,8 +9,7 @@ import { ToasterService } from 'src/app/core/services/toaster.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent extends Destroyer implements OnInit {
   form: FormGroup;

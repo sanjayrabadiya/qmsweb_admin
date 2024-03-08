@@ -6,8 +6,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-already-loggedin',
-  templateUrl: './already-loggedin.component.html',
-  styleUrls: ['./already-loggedin.component.scss']
+  templateUrl: './already-loggedin.component.html'
 })
 export class AlreadyLoggedinComponent extends Destroyer implements OnInit {
   user = '';

@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-force-logout',
-  templateUrl: './force-logout.component.html',
-  styleUrls: ['./force-logout.component.scss']
+  templateUrl: './force-logout.component.html'
 })
 export class ForceLogoutComponent implements OnInit {
   constructor(private utils: UtilityService, private router: Router) {}

@@ -6,8 +6,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-otp',
-  templateUrl: './otp.component.html',
-  styleUrls: ['./otp.component.scss']
+  templateUrl: './otp.component.html'
 })
 export class OtpComponent extends Destroyer implements OnInit {
   form: FormGroup;
