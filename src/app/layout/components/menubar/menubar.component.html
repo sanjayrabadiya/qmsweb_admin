@@ -13,6 +13,5 @@
     </div>
   </div>
 </div>
-
 <app-sidebar-menu [@slideInOut]="menuState" (itemClicked)="menuState = 'out'; itemClicked.emit($event)" (hideMenu)="menuState = 'out'" (mainMenu)="getMainValue($event)" (subMenu)="getSubValue($event)"></app-sidebar-menu>
 
