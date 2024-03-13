@@ -27,8 +27,7 @@ export class GridSettingsComponent extends Destroyer implements OnInit {
 
   private prepareItemList(saved: UserGridSettingModel[]) {
     this.items = [];
-    //arr.splice(arr.length - 1, 1);
-    this.data.grid.columnModel.forEach((t: Column) => {
+     this.data.grid.columnModel.forEach((t: Column) => {
       if (t.field != "deletedByUser" && t.field != "deletedDate") {
         if (t.field) {
           const existing = saved.find((s) => {

@@ -9,7 +9,6 @@ export class BreadcrumbService {
   mainMenu = this.parentMenu.asObservable();
   subMenu = this.chileMenu.asObservable();
 
-  constructor() { }
 
   changeMain(message: string) {
     this.parentMenu.next(message)

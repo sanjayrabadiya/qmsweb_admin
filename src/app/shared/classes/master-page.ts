@@ -1,4 +1,3 @@
-import { IMasterPage } from './../interfaces/imaster-page';
 import { BaseApiService } from 'src/app/core/services/base-api.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { MasterGridConfig, MasterGridComponent } from '../components/master-grid/master-grid.component';

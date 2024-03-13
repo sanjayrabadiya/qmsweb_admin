@@ -15,9 +15,8 @@ import { ZoneModel } from '../ZoneModel';
 export class ZoneListComponent extends GridDataBinding implements OnInit {
 
   zoneList: ZoneModel[];
-  // public now: Date = new Date();
   moduleId = Constant.AuditModules.Common;
-  // securityObj: any;
+
   @Input() config: MasterGridConfig;
   @Output() previewClick: EventEmitter<any> = new EventEmitter();
   @Output() deleted: EventEmitter<any> = new EventEmitter();
@@ -54,9 +53,10 @@ export class ZoneListComponent extends GridDataBinding implements OnInit {
     super();
     this.loadList();
   }
-
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
 
   public itemBeforeEvent(args: MenuEventArgs) {
     (this.grid.columns[0] as Column).visible = false;
@@ -99,7 +99,6 @@ export class ZoneListComponent extends GridDataBinding implements OnInit {
   loadList(isDelete?: boolean) {
     this.service.getAllZone(isDelete ? true : false).subscribe(res => {
       this.zoneList = res;
-      //console.log("Zone List : ", res);
     });
   }
 

@@ -122,32 +122,7 @@ export class ChangePasswordComponent   implements OnInit  {
   }
 
   PasswordValidation(event: any) {
-    // this._loginPreferenceService
-    //     .getLoginPreferencebyUsername(this.userName)
-    //     .subscribe(aa => {
-    //         this.loginPreference = aa;
-    //         this.Message = [];
-    //         const password = event.target.value;
-    //         let hasNumber = /\d/.test(password);
-    //         let hasUpper = /[A-Z]/.test(password);
-    //         let hasLower = /[a-z]/.test(password);
-    //         let specialCharecter = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
-    //         if (password.length == 0 || password == "" || password == null)
-    //             this.Message.push(" Password is Required!");
-    //         else {
-    //             if (this.loginPreference.requiredAlphaNumber == true && hasNumber == false)
-    //                 this.Message.push(" Must contain at least 1 number!");
-    //             if (this.loginPreference.requiredCapital == true && hasUpper == false)
-    //                 this.Message.push(" Must contain at least 1 in Capital Case!");
-    //             // if (hasLower == false)
-    //             //     this.Message.push(" Must contain at least 1 Letter in Small Case!");
-    //             if (this.loginPreference.requiredSpecialChar == true && specialCharecter == false)
-    //                 this.Message.push("Must contain at least 1 Special Character!");
-    //             if (password.length < this.loginPreference.minPasswordLength)
-    //                 this.Message.push(" Must be at least " + this.loginPreference.minPasswordLength + " characters!");
-    //         }
-    //         this.MatchPassword();
-    //     });
+   
   }
 
   MatchPassword() {

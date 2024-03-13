@@ -22,9 +22,9 @@ export class AlreadyLoggedinComponent extends Destroyer implements OnInit {
   }
 
   logoutAllDevices() {
-    this.subs = this.authService.logOutFromEveryWhere(this.user).subscribe((res) => {
+    this.subs = this.authService.logOutFromEveryWhere(this.user).subscribe(() => {
       this.storage.clear();
-      // this.router.navigate(['/auth']);
+      
     });
   }
 }

@@ -18,10 +18,6 @@ export class AppComponent extends Destroyer implements OnInit {
   }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.signalRServer.startConnection();
-    //   this.subs = this.utils.data.get('notify').subscribe((res) => {});
-    // }, 100);
-    // this.utils.InternetStatus();
+   
   }
 }

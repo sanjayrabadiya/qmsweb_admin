@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Destroyer } from 'src/app/core/utils/destroyer';
-import { electronicsSignatureService } from './electronics-signature.service';
+import { ElectronicsSignatureService } from './electronics-signature.service';
 import { AppUser } from './electronics-signature.model';
 import { DateTimeFormat } from 'src/app/shared/pipes/dateFormatTime.pipe';
 
@@ -20,7 +20,7 @@ export class ElectronicSignatureComponent extends Destroyer implements OnInit {
   public data: any;
 
   constructor(
-    private formBuilder: FormBuilder, private utils: UtilityService, public service: electronicsSignatureService,
+    private formBuilder: FormBuilder, private utils: UtilityService, public service: ElectronicsSignatureService,
     private activeModal: NgbActiveModal,private datetimeformat: DateTimeFormat) {
     super();
   }

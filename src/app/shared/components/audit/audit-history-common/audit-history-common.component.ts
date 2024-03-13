@@ -3,7 +3,7 @@ import { AuditTrailCommonModel } from 'src/app/core/models/audit-model';
 import { AuditService } from '../audit.service';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { GridComponent,ExcelExportProperties,PdfExportProperties, Column, TextWrapSettingsModel  } from '@syncfusion/ej2-angular-grids';
+import { GridComponent,ExcelExportProperties,PdfExportProperties, TextWrapSettingsModel  } from '@syncfusion/ej2-angular-grids';
 import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({

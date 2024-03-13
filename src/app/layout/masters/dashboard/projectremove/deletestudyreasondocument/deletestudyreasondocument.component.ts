@@ -1,9 +1,7 @@
-import { Component, Output, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { Constant } from 'src/app/core/constants/constants';
 import { Subscription } from 'rxjs';
-import { MenuEventArgs, ItemModel } from '@syncfusion/ej2-splitbuttons';
-import { destroy } from '@syncfusion/ej2-angular-buttons';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { AuditService } from 'src/app/shared/components/audit/audit.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -48,9 +46,7 @@ export class DeleteStudyReasonDocumentComponent extends Destroyer implements OnI
 
     reasonChanged(id: string) {
       
-        const reason = this.auditReasons.find((t) => {
-            return t.id === +id;
-        });
+        
         if (id == "1") {
             this.dataItem.isOther = true;
         }

@@ -1,5 +1,4 @@
 import { StorageService } from 'src/app/core/services/storage.service';
-import { UtilityService } from 'src/app/core/services/utility.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse, HttpHeaders, HttpClient } from '@angular/common/http';
@@ -43,12 +42,12 @@ export class AuthInterceptor implements HttpInterceptor {
     }
     headerSettings['Content-Type'] = 'application/json';
 
-    const auditReasonId = this.storage.GetAuditReasonId;//localStorage.getItem('audit-reason-id');
+    const auditReasonId = this.storage.GetAuditReasonId;
     if (auditReasonId && auditReasonId !== 'undefined') {
       headerSettings['audit-reason-id'] = auditReasonId;
     }
 
-    const auditReasonOth = this.storage.GetAuditReasonOth;//localStorage.getItem('audit-reason-oth');
+    const auditReasonOth = this.storage.GetAuditReasonOth;
     if (auditReasonOth && auditReasonOth !== 'undefined') {
       headerSettings['audit-reason-oth'] = auditReasonOth;
     }
@@ -102,11 +101,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   refreshToken() {
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json'
-    //   })
-    // };
+   
 
     let refreshObject: any = {};
     refreshObject.refreshToken = this.storage.RefreshToken;

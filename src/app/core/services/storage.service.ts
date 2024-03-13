@@ -1,9 +1,8 @@
 import { BaseSettingsModel } from './../models/base-settings.model';
 import { Injectable } from '@angular/core';
 import { GeneralSettingsModel } from '../models/general-settings';
-//import { ScreenRightsModel } from '../models/screen-rights-model';
 import { CurrentUserModel } from '../models/current-user';
-import { dataBound } from '@syncfusion/ej2-angular-grids';
+
 
 const TOKEN_KEY = 'AuthToken';
 const RIGHTS_KEY = 'Rights';
@@ -17,7 +16,7 @@ const AUDIT_REASON_OTH = 'audit-reason-oth';
 
 @Injectable()
 export class StorageService {
-  constructor() {}
+  
 
   private removeItem(key: string) {
     window.sessionStorage.removeItem(key);
@@ -42,10 +41,7 @@ export class StorageService {
     this.setItem(REFRESH_TOKEN_KEY, token);
   }
 
-  // private setRights(rights: ScreenRightsModel[]) {
-  //   if (!rights) return;
-  //   this.setItem(RIGHTS_KEY, JSON.stringify(rights));
-  // }
+ 
 
   private setGeneralSettings(settings: GeneralSettingsModel) {
     if (!settings) return;
@@ -68,11 +64,10 @@ export class StorageService {
   setUserData(data: CurrentUserModel) {
     this.setToken(data.token);
     this.setRefreshToken(data.refreshToken);
-    //this.setRights(data.rights);
     this.setGeneralSettings(data.generalSettings);
     delete data.token;
     delete data.refreshToken;
-    //delete data.rights;
+    
     delete data.generalSettings;
 
     this.setCurrentUser(data);
@@ -112,15 +107,8 @@ export class StorageService {
     return token ? 'Bearer ' + token : '';
   }
 
-  // get Rights(): ScreenRightsModel[] {
-  //   const stringValue = this.getItem(RIGHTS_KEY);
-  //   const data = JSON.parse(stringValue) as ScreenRightsModel[];
-  //   return data;
-  // }
-
+ 
   get GeneralSettings(): GeneralSettingsModel {
-    // const stringValue = this.getItem(GEN_SET_KEY);
-    // const data = JSON.parse(stringValue) as GeneralSettingsModel;
     const data = new GeneralSettingsModel();
     data.dateFormat="dd/MM/yyyy";   
     data.timeFormat="hh:mm a";
@@ -138,13 +126,13 @@ export class StorageService {
 
   get GetAuditReasonId(): string {
     const stringValue = this.getItem(AUDIT_REASON_ID);
-    const data = stringValue as string;
+    const data = stringValue;
     return data;
   }
 
   get GetAuditReasonOth(): string {
     const stringValue = this.getItem(AUDIT_REASON_OTH);
-    const data = stringValue as string;
+    const data = stringValue;
     return data;
   }
 

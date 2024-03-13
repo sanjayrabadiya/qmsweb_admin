@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { GridSettingsComponent } from '../master-grid/grid-settings/grid-settings.component';
 import { UserGridSettingModel } from '../../models/user-grid-settings-model';
-import { GridComponent, Column  } from '@syncfusion/ej2-angular-grids';
+import { GridComponent  } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'grid-settings-button',

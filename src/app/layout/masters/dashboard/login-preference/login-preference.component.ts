@@ -1,7 +1,7 @@
-import { DatabaseConfig, DropDownModel, LoginPreferenceModel, ssl } from '../dashbord.model';
+import { DropDownModel, LoginPreferenceModel, Ssl } from '../dashbord.model';
 import { UtilityService } from './../../../../core/services/utility.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { DashbordService } from '../dashboard.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -18,7 +18,7 @@ export class LoginPreferenceComponent extends Destroyer implements OnInit {
   companyDataSource: DropDownModel[];
   showDetails: boolean;
   CompanyData = [];
-  sslDataSource: ssl[] = [
+  sslDataSource: Ssl[] = [
     { value: true, viewValue: 'True' },
     { value: false, viewValue: 'False' },
   ];

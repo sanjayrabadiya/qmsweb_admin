@@ -94,7 +94,7 @@ export class ChildCompnayModel {
   zoneList?: any
 }
 
-export interface ssl {
+export interface Ssl {
   value: boolean;
   viewValue: string;
 }

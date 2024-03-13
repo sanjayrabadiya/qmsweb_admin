@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Constant } from 'src/app/core/constants/constants';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 import { ExcelExportProperties, Column, PdfExportProperties, GridComponent } from '@syncfusion/ej2-angular-grids';
@@ -19,9 +19,7 @@ import { LoginPreferenceComponent } from '../login-preference/login-preference.c
 export class LoginPreferenceListComponent extends GridDataBinding implements OnInit {
 
     List: LoginPreferenceModel[];
-    // public now: Date = new Date();
-    moduleId = Constant.AuditModules.Common;
-    // securityObj: any;
+moduleId = Constant.AuditModules.Common;
     @Input() config: MasterGridConfig;
     @Output() previewClick: EventEmitter<any> = new EventEmitter();
     @Output() deleted: EventEmitter<any> = new EventEmitter();
