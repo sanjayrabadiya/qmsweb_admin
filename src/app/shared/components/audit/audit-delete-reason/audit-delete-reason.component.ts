@@ -7,8 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-audit-delete-reason',
-  templateUrl: './audit-delete-reason.component.html',
-  styleUrls: ['./audit-delete-reason.component.scss']
+  templateUrl: './audit-delete-reason.component.html'
 })
 export class AuditDeleteReasonComponent extends Destroyer implements OnInit {
   @Input() data: any;
@@ -34,10 +33,6 @@ export class AuditDeleteReasonComponent extends Destroyer implements OnInit {
   }
 
   reasonChanged(id: string) {
-    const reason = this.auditReasons.find((t) => {
-      return t.id === +id;
-    });
-    // this.dataItem.isOther = reason && reason.isOther;
     if (id == "1") {
       this.dataItem.isOther = true;
     }

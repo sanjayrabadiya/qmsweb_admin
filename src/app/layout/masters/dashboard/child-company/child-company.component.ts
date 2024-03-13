@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ChildCompnayModel, DropDownModel, ssl } from '../dashbord.model';
+import { ChildCompnayModel, DropDownModel, Ssl } from '../dashbord.model';
 import { DashbordService } from '../dashboard.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { ZoneModel } from '../../zone/ZoneModel';
-import { inputs } from '@syncfusion/ej2-angular-grids/src/grid/grid.component';
 
 @Component({
   selector: 'app-child-company',
@@ -25,7 +24,7 @@ export class ChildCompanyComponent extends Destroyer implements OnInit{
   isDisabled : boolean = false;
   child_company: boolean = false;
 
-  sslDataSource: ssl[] = [
+  sslDataSource: Ssl[] = [
     { value: true, viewValue: 'True' },
     { value: false, viewValue: 'False' },
   ];
@@ -41,7 +40,7 @@ export class ChildCompanyComponent extends Destroyer implements OnInit{
   ngOnInit(): void {
     this.initForm();
     this.loadZoneList();
-    //this.getCompanyDropDown();
+
     this.getCompanyCode();
     if (this.data.id > 0) {
       this.onEdit(this.data.id);
@@ -94,9 +93,7 @@ export class ChildCompanyComponent extends Destroyer implements OnInit{
   }
   onReset(): void {
     this.form.reset();
-    if (this.id > 0) {
-     // this.onEdit(this.id);
-    }
+    
   }
 
   onEdit(id: number): void {

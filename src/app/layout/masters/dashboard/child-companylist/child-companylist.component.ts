@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ChildCompnayModel } from '../dashbord.model';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
-import { Column, ExcelExportProperties, GridComponent, PdfExportProperties } from '@syncfusion/ej2-angular-grids';
+import {  GridComponent } from '@syncfusion/ej2-angular-grids';
 import { GridDataBinding } from 'src/app/shared/directives/grid-data-binding.directive';
 import { Subscription } from 'rxjs';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons/src/common/common-model';
@@ -9,8 +9,6 @@ import { UtilityService } from 'src/app/core/services/utility.service';
 import { DashbordService } from '../dashboard.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ChildCompanyComponent } from '../child-company/child-company.component';
-import { MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { Constant } from 'src/app/core/constants/constants';
 
 @Component({
@@ -35,8 +33,7 @@ export class ChildCompanylistComponent extends GridDataBinding implements OnInit
   actionWidth = 100;
   public pageSettings: Object;
   @Input() searchObject: Object;
-  private serviceSubscription: Subscription;
-  //data: any[];
+
   searchText = '';
   public items: ItemModel[] = [
       {
@@ -58,39 +55,9 @@ export class ChildCompanylistComponent extends GridDataBinding implements OnInit
 
   constructor(private utils: UtilityService, private service: DashbordService, private dialog: NgbModal, private sanitizer: DomSanitizer) {
     super(); }
-
   ngOnInit(): void {
-  
+    throw new Error('Method not implemented.');
   }
-
-
-
-//   public itemBeforeEvent(args: MenuEventArgs) {
-//     (this.grid.columns[0] as Column).visible = false;
-//     if (args.item.id === 'Grid_pdfexport') {
-//         const pdfExportProperties: PdfExportProperties = {
-//             fileName: 'new.pdf',
-//         };
-//         this.grid.pdfExport(pdfExportProperties);
-//     }
-
-//     if (args.item.id === 'Grid_excelexport') {
-//         const excelExportProperties: ExcelExportProperties = {
-//             fileName: 'new.xlsx'
-//         };
-//         this.grid.excelExport(excelExportProperties);
-//     }
-
-//     if (args.item.id === 'Grid_csvexport') {
-//         const csvExportProperties: ExcelExportProperties = {
-//             fileName: 'new.csv'
-//         };
-//         this.grid.csvExport(csvExportProperties);
-//     }
-// }
-
-
-
 
 
 }

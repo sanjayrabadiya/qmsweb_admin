@@ -1,20 +1,18 @@
 import { AuditDeleteReasonComponent } from './../../../shared/components/audit/audit-delete-reason/audit-delete-reason.component';
 import { UtilityService } from './../../../core/services/utility.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MasterPage } from 'src/app/shared/classes/master-page';
 import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
-import { DashbordModel, DatabaseConfig, StudyConfig, CompanyModuleModel, ChildCompnayModel } from './dashbord.model';
+import { DashbordModel, StudyConfig, CompanyModuleModel, ChildCompnayModel } from './dashbord.model';
 import { DashbordService } from './dashboard.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MenuEventArgs, ItemModel } from '@syncfusion/ej2-splitbuttons';
-//import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 import { StudyconfigComponent } from './studyconfig/studyconfig.component'
 import { StudymoduleComponent } from './studymodule/studymodule.component'
 import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
 import { Constant } from './../../../core/constants/constants';
 import { ZoneModel } from '../zone/ZoneModel';
 import { ChildCompanyComponent } from './child-company/child-company.component';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 
 
@@ -39,11 +37,9 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
   zoneList: ZoneModel[];
   public currentStep = 0
   isDeleted: boolean = false;
-  //isDeletedStudy: boolean;
-  @Input() config: MasterGridConfig;  
+@Input() config: MasterGridConfig;  
   @ViewChild('gristudysetup') public gristudysetup;
   @ViewChild('treeview')
-  //@ViewChild('grid') public grid: GridComponent;
   public tree: TreeViewComponent;
   permissions: CompanyModuleModel[] = [];
   savePermission: CompanyModuleModel[] = [];
@@ -90,26 +86,7 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
       title: 'Company List',
       screenCode: 'company',
       columns: [
-        // {
-        //   field: 'companyCode',
-        //   title: 'Company Code',
-        //   width: 100
-        // },
-        // {
-        //   field: 'companyName',
-        //   title: 'Company Name',
-        //   width: 110
-        // },
-        // {
-        //   field: 'phone',
-        //   title: 'Company Phone',
-        //   width: 140
-        // },
-        // {
-        //   field: 'address',
-        //   title: 'Address',
-        //   width: 100
-        // }
+        
       ]
     };
   }
@@ -150,7 +127,7 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
     this.form.reset();
     this.subs = this.service.getOneById(this.id).subscribe((data) => {
       this.showDetails = true;
-      ///this.type=data.type;  
+    
       this.form.setValue({
         companyCode: data.companyCode,
         companyName: data.companyName,
@@ -261,27 +238,7 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
   }
 
   public exportBeforeEvent(args: MenuEventArgs) {
-    // (this.griddatabaseconfig.columns[0] as Column).visible = false;
-    // if (args.item.id === 'Grid_pdfexport') {
-    //   const pdfExportProperties: PdfExportProperties = {
-    //     fileName: 'new.pdf',
-    //   };
-    //   this.griddatabaseconfig.pdfExport(pdfExportProperties);
-    // }
-
-    // if (args.item.id === 'Grid_excelexport') {
-    //   const excelExportProperties: ExcelExportProperties = {
-    //     fileName: 'new.xlsx'
-    //   };
-    //   this.griddatabaseconfig.excelExport(excelExportProperties);
-    // }
-
-    // if (args.item.id === 'Grid_csvexport') {
-    //   const csvExportProperties: ExcelExportProperties = {
-    //     fileName: 'new.csv'
-    //   };
-    //   this.griddatabaseconfig.csvExport(csvExportProperties);
-    // }
+    
   }
 
   changeType(type: number) {
@@ -448,7 +405,7 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
   }
 
   DeleteCompnay(data: ChildCompnayModel){
-    var id = data.id
+    let id = data.id
     console.log(id);
     this.service.DeleteCompany(id).subscribe(res=>{
       this.utils.toast.success("Child Company Deleted Successfully.");

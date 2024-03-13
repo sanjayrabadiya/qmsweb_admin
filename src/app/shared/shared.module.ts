@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GridModule, SortService, GroupService, PageService, ToolbarService, SearchService, 
   PdfExportService, ExcelExportService, SelectionService, ResizeService, DetailRowService, 
-  CommandColumnService, ContextMenuService, EditService } from '@syncfusion/ej2-angular-grids';
+  CommandColumnService, ContextMenuService, EditService,GridAllModule } from '@syncfusion/ej2-angular-grids';
 import { DirectivesModule } from './directives/directives.module';
 import { PipesModule } from './pipes/pipes.module';
 import { PartialDateComponent } from './components/partial-date/partial-date.component';
@@ -20,21 +20,16 @@ import { MasterSaveButtonComponent } from './components/buttons/master-save-butt
 import { MasterGridComponent } from './components/master-grid/master-grid.component';
 import { AuditHistoryCommonButtonComponent } from './components/buttons/audit-history-common-button.component';
 import { AuditHistoryCommonComponent } from './components/audit/audit-history-common/audit-history-common.component';
-import { ButtonAllModule,ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { ButtonModule, CheckBoxModule,SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { CheckBoxSelectionService,ComboBoxModule  } from '@syncfusion/ej2-angular-dropdowns';
 import { AccordionModule, TabModule, ToolbarAllModule, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { DatePickerComponent, DatePickerModule, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { ConfirmationDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-//import { SignaturePadModule } from '@ng-plus/signature-pad';
-import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { NgbActiveModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
-import {
-  GridAllModule,
-} from '@syncfusion/ej2-angular-grids';
 import { DocumentEditorModule, DocumentEditorContainerModule, EditorService, SfdtExportService, TextExportService } from '@syncfusion/ej2-angular-documenteditor';
 import { AccumulationLegendService, AccumulationTooltipService, AccumulationDataLabelService } from '@syncfusion/ej2-angular-charts';
 

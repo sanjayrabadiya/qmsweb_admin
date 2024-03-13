@@ -1,11 +1,9 @@
 import { UtilityService } from './../../../../core/services/utility.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DashbordService } from '../dashboard.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AuditDeleteReasonComponent } from 'src/app/shared/components/audit/audit-delete-reason/audit-delete-reason.component';
-import { Constant } from 'src/app/core/constants/constants';
 import { StudyModuleModel } from '../dashbord.model'
 import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
 

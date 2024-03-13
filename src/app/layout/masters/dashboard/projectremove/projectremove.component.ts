@@ -1,12 +1,8 @@
 import { UtilityService } from './../../../../core/services/utility.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input, ViewChild, Type } from '@angular/core';
-import { DashbordService } from '../dashboard.service';
-import { Destroyer } from 'src/app/core/utils/destroyer';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import * as _ from 'lodash';
-import { ConfirmationDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
-import { MenuEventArgs, ItemModel } from '@syncfusion/ej2-splitbuttons';
+import { ItemModel } from '@syncfusion/ej2-splitbuttons';
 import { MasterPage } from 'src/app/shared/classes/master-page';
 import { ProjectDataRemoveModel } from './projectremove.model';
 import { ProjectDataRemoveService } from './projectremove.service';
@@ -90,7 +86,7 @@ export class ProjetRemoveComponent extends MasterPage<ProjectDataRemoveModel> im
     if (!id) {
       return false;
     }
-    var filterResult = this.ProjectData.filter(x => x.id == id);
+    let filterResult = this.ProjectData.filter(x => x.id == id);
     if (filterResult.length > 0) {
       this.StudyCode = filterResult[0].value
     }
@@ -176,7 +172,7 @@ export class ProjetRemoveComponent extends MasterPage<ProjectDataRemoveModel> im
       this.utils.toast.error("Please select study!");
       return false;
     }
-    var filterResult = this.ProjectData.filter(x => x.id == this.form.value.ProjectId);
+    let filterResult = this.ProjectData.filter(x => x.id == this.form.value.ProjectId);
     if (filterResult.length > 0) {
       this.StudyCode = filterResult[0].value
     }
@@ -263,7 +259,7 @@ export class ProjetRemoveComponent extends MasterPage<ProjectDataRemoveModel> im
     });
   }
   deleteData() {
-    var filterResult = this.ProjectData.filter(x => x.id == this.form.value.ProjectId);
+    let filterResult = this.ProjectData.filter(x => x.id == this.form.value.ProjectId);
     if (filterResult.length > 0) {
       this.StudyCode = filterResult[0].value
     }
@@ -345,7 +341,7 @@ export class ProjetRemoveComponent extends MasterPage<ProjectDataRemoveModel> im
             this.form.patchValue({
               CompanyId: res.companyId,
             });
-            if (res.isDelete == false) {
+            if (!res.isDelete) {
               this.service.GetStudyListByCompanyid(res.companyId).subscribe(res2 => {
                 this.ProjectData = res2;
                 if (this.ProjectData != null) {

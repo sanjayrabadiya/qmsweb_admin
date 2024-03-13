@@ -10,8 +10,7 @@ export class ConfirmationDialogComponent {
   constructor(public activeModal: NgbActiveModal) {
   }
 
-  ngOnInit(): void {
-  }
+  
 
   close() {
     this.activeModal.close(false);

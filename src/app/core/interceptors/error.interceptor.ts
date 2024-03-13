@@ -20,8 +20,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               break;
 
             case 401:
-              // this.handleUnauthorized(error);
-              break;
+               break;
 
             case 403:
               this.handleForbidden();

@@ -55,20 +55,6 @@ export class AuditService {
           if (element) {
             if (hasChanged) {
               element.classList.add('control-history');
-              const dialog = this.dialog;
-              const searchField = <AuditTrailModel>{
-                moduleId: moduleId,
-                tableId: tableId,
-                recordId: recordId,
-                columnName: prop
-              };
-
-              element.clickListener = function () {
-                // dialog.open(AuditHistoryComponent, {
-                //     data: { search: searchField }
-                // });
-              };
-
               element.addEventListener('click', element.clickListener);
             } else {
               element.classList.remove('control-history');

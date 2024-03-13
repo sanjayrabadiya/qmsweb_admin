@@ -42,8 +42,7 @@ export class MenubarComponent implements OnInit {
 
   getMainValue(selected: string) {   
     if (selected) {
-      // this.mainMenu = selected;     
-      // this.subMenu = '';
+     
       this.breadcrumbDataService.changeMain(selected)
       this.breadcrumbDataService.changeSub('')
     }
@@ -51,7 +50,7 @@ export class MenubarComponent implements OnInit {
 
   getSubValue(selected: string) {   
     if (selected) {
-      //this.subMenu = selected;
+      
       this.breadcrumbDataService.changeSub(selected)
     }
   }

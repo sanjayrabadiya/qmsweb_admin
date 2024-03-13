@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
-import { Destroyer } from 'src/app/core/utils/destroyer';
 import { Constant } from 'src/app/core/constants/constants';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 import { ExcelExportProperties, Column, PdfExportProperties, GridComponent } from '@syncfusion/ej2-angular-grids';
@@ -17,9 +16,7 @@ import { GridDataBinding } from 'src/app/shared/directives/grid-data-binding.dir
 export class DashbordlistComponent extends GridDataBinding implements OnInit {
 
     companyList: DashbordModel[];
-   // public now: Date = new Date();
     moduleId = Constant.AuditModules.Common;
-   // securityObj: any;
     @Input() config: MasterGridConfig;
     @Output() previewClick: EventEmitter<any> = new EventEmitter();
     @Output() deleted: EventEmitter<any> = new EventEmitter();
@@ -56,11 +53,11 @@ export class DashbordlistComponent extends GridDataBinding implements OnInit {
   constructor(private utils: UtilityService,private service: DashbordService,) {  
     super();
     this.loadList();
-    //this.securityObj = this.utils.storage.CurrentUser;
-  }
+ }
+    ngOnInit(): void {
+        throw new Error('Method not implemented.');
+    }
 
-  ngOnInit(): void {
-  }
 
 public itemBeforeEvent(args: MenuEventArgs) {
     (this.grid.columns[0] as Column).visible = false;

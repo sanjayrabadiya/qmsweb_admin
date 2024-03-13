@@ -5,7 +5,6 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { ToasterService } from 'src/app/core/services/toaster.service';
-//import { DropDownService } from 'src/app/core/services/drop-down.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,6 @@ import { ToasterService } from 'src/app/core/services/toaster.service';
 })
 export class LoginComponent extends Destroyer implements OnInit {
   form: FormGroup;
-  //roles: any[];
   selectedRoleId = 0;
   isFirstTime = false;
   userNametoreset: string;
@@ -24,7 +22,6 @@ export class LoginComponent extends Destroyer implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService, 
     private toasterService: ToasterService,
-   // private dropDownService: DropDownService,
     private utils: UtilityService) {
     super();
   }
@@ -51,16 +48,14 @@ export class LoginComponent extends Destroyer implements OnInit {
         this.userNametoreset = res.userName;
         this.oldpasswordtoreset = this.form.controls['password'].value//res.password;
         this.isFirstTime = true;
-        // this.router.navigate(['../reset', value.userName, value.password], {
-        //   relativeTo: this.route
-        // });
+      
       } else {
         if (res.askToSelectRole) {
-          //this.roles = res.roles;
+        
         } else {
           this.utils.storage.setUserData(res);
           localStorage.removeItem("currentOpenMenu");
-          var dashboardComponent: any[] = [];
+          let dashboardComponent: any[] = [];
           dashboardComponent.push({ "componentId": "mnu_dashboard", "title": "Dashboard", "selected": true });
           localStorage.setItem("currentOpenMenu", JSON.stringify(dashboardComponent));
           this.router.navigate(['/']);

@@ -1,13 +1,12 @@
 import { StudyConfigPremise } from '../dashbord.model';
 import { UtilityService } from './../../../../core/services/utility.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input, ViewChild,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { DashbordService } from '../dashboard.service';
 import { Destroyer } from 'src/app/core/utils/destroyer';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { AuditDeleteReasonComponent } from 'src/app/shared/components/audit/audit-delete-reason/audit-delete-reason.component';
-import { Constant } from 'src/app/core/constants/constants';
+
 
 @Component({
   selector: 'app-studyconfig-premise',
@@ -26,7 +25,7 @@ export class StudyconfigPremiseComponent extends Destroyer implements OnInit {
   constructor(private service: DashbordService, private formBuilder: FormBuilder, private dialog: NgbModal, private activeModal: NgbActiveModal,
     private utils: UtilityService) {
       super();
-     // this.studyConfig= new StudyConfigPremise(); 
+    
      }
 
 

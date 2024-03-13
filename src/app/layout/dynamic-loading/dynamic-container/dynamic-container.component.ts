@@ -21,20 +21,17 @@ export class DynamicContainerComponent implements OnInit {
   }
   public onTabSelect(e: SelectEventArgs) {  
     for (let i = 0; i < this.tabItems.length; i++) {
-      //this.tabItems[i].selected = i === e.index;
+      
       this.tabItems[i].selected = i === e.selectedIndex;
     }
     const selectedtabItem = this.tabItems.find(x => x.selected === true);
-    //this.reloadcomponet.reloadComponent(selectedtabItem);
+    
     this.breadcrumbDataService.changeMain(selectedtabItem.masterMenu);
     this.breadcrumbDataService.changeSub(selectedtabItem.title);
   }
 
   initiazeMenuItems() {
-    // this.menuItems.push(new ComponentTabItem(CountryComponent, 'country', 'Country', null));
-    // this.menuItems.push(new ComponentTabItem(StateComponent, 'state', 'State', null));
-    // this.menuItems.push(new ComponentTabItem(CityComponent, 'city', 'City', null));
-    // this.menuItems.push(new ComponentTabItem(AreaComponent, 'are', 'Area', null));
+    
   }
 
   addTabItem(newItem: ComponentTabItem) {
@@ -80,16 +77,5 @@ export class DynamicContainerComponent implements OnInit {
     }
   }
 
-  // async loadLazyModue(id: string) {
-  //   let module: any;
-  //   if (id === 'lazy') {
-  //     module = await import('src/app/dynamic-loading/component/lazy/lazy.module');
-  //   } else if (id === 'lazy2') {
-  //     module = await import('src/app/dynamic-loading/component/lazy2/lazy2.module');
-  //   }
-  //   if (module) {
-  //     const items: ComponentTabItem[] = module.menuItems as ComponentTabItem[];
-  //     this.menuItems.push(...items);
-  //   }
-  // }
+
 }

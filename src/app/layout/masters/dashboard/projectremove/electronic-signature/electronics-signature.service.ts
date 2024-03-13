@@ -6,7 +6,7 @@ import {  AppUser } from './electronics-signature.model';
 @Injectable({
   providedIn: 'root'
 })
-export class electronicsSignatureService  {
+export class ElectronicsSignatureService  {
   constructor(protected dataService: DataService) {
   }
 

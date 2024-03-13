@@ -38,9 +38,7 @@ export class SidebarMenuComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadCurrentModule();
-    //const rights = this.utils.storage.Rights;
-    // this.modules = this.modules.filter((module) => rights.some((t) => t.screenCode === module.id));
-  }
+    }
 
   showDivs() {
     this.visability = true;
@@ -53,7 +51,7 @@ export class SidebarMenuComponent implements OnInit {
     if (this.currentModules) {
       this.currentOpenItems = localStorage.getItem("currentOpenMenu") !== null ? JSON.parse(localStorage.getItem("currentOpenMenu")) : [];
       if (this.currentOpenItems.length) {
-        this.currentOpenItems.map(x => {
+        this.currentOpenItems.forEach(x => {
           console.log(this.currentOpenItems);
           this.loadItem(this.currentModules.find(y => y.componentId === x.componentId))
         });
@@ -68,18 +66,14 @@ export class SidebarMenuComponent implements OnInit {
     let module: any;
     this.selectedModule = moduleToLoad;
     this.visability = false;
-    //module = await import('src/app/layout/masters/masters.module');
-
     if (moduleToLoad.id === 'mnu_master') {
       module = await import('src/app/layout/masters/masters.module');
     }
     if (module) {
       this.visability = true;
-      // const rights = this.utils.storage.Rights;
       const allItems = module.menuItems as ComponentTabItem[];
       this.menuItems = allItems;
-      // this.menuItems = allItems.filter((item) => rights.some((t) => t.screenCode === item.componentId));
-    }
+     }
     this.mainMenu.emit(this.selectedModule.name);
   }
 
@@ -88,7 +82,7 @@ export class SidebarMenuComponent implements OnInit {
     this.currentOpenItems.push(item);
     this.currentOpenItems = this.currentOpenItems.filter(x => x !== undefined);
     if (item.componentId !== 'mnu_queeryManagement') {
-      var resultItems = this.currentOpenItems.reduce((unique, o) => {
+      let resultItems = this.currentOpenItems.reduce((unique, o) => {
         if (!unique.some(obj => obj.componentId === o.componentId)) {
           unique.push(o);
         }

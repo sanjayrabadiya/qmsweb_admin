@@ -1,12 +1,10 @@
 import { Component, Output, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
-import { Destroyer } from 'src/app/core/utils/destroyer';
 import { Constant } from 'src/app/core/constants/constants';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 import { ExcelExportProperties, Column, PdfExportProperties, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { Subscription } from 'rxjs';
 import { MenuEventArgs, ItemModel } from '@syncfusion/ej2-splitbuttons';
 import { UtilityService } from './../../../../core/services/utility.service';
-import { DashbordService } from '../dashboard.service';
 import { GridDataBinding } from 'src/app/shared/directives/grid-data-binding.directive';
 import { ProjectDataRemoveList } from '../projectremove/projectremove.model';
 import { ProjectDataRemoveService } from '../projectremove/projectremove.service';
@@ -19,9 +17,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ProjectDataRemoveListComponent extends GridDataBinding implements OnInit {
 
     List: ProjectDataRemoveList[];
-    // public now: Date = new Date();
     moduleId = Constant.AuditModules.Common;
-    // securityObj: any;
+   
     @Input() config: MasterGridConfig;
     @Output() previewClick: EventEmitter<any> = new EventEmitter();
     @Output() deleted: EventEmitter<any> = new EventEmitter();
@@ -105,13 +102,6 @@ export class ProjectDataRemoveListComponent extends GridDataBinding implements O
     loadList(isDelete?: boolean) {
         this.service.GetAllProjectRemoveList(isDelete ? true : false).subscribe(res => {
             this.List = res;
-            // if (this.List != null && this.List.length > 0) {
-            //     this.List.forEach((x) => {
-            //         if (x.path != null) {
-            //             x.path = this.sanitizer.bypassSecurityTrustUrl(x.path);
-            //         }
-            //     });
-            // }
         });
     }
 
