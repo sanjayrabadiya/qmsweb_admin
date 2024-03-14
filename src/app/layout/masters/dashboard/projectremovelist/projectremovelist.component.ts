@@ -57,9 +57,10 @@ export class ProjectDataRemoveListComponent extends GridDataBinding implements O
         this.loadList();
 
     }
-
     ngOnInit(): void {
+        throw new Error('Method not implemented.');
     }
+
 
     public itemBeforeEvent(args: MenuEventArgs) {
         (this.grid.columns[0] as Column).visible = false;

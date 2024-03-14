@@ -11,14 +11,15 @@ export class DynamicContainerComponent implements OnInit {
   tabItems: ComponentTabItem[] = [];
   menuItems: ComponentTabItem[] = [];
   constructor(private breadcrumbDataService: BreadcrumbService) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   currentModules: ComponentTabItem[] = [];
   currentOpenItems: any[] = [];
   @ViewChild('reloadcomponet') reloadcomponet;
   @ViewChild('dynamicTab') tabObj: TabComponent;
 
-  ngOnInit(): void {
-    this.initiazeMenuItems();
-  }
+  
   public onTabSelect(e: SelectEventArgs) {  
     for (let i = 0; i < this.tabItems.length; i++) {
       
@@ -30,9 +31,7 @@ export class DynamicContainerComponent implements OnInit {
     this.breadcrumbDataService.changeSub(selectedtabItem.title);
   }
 
-  initiazeMenuItems() {
-    
-  }
+
 
   addTabItem(newItem: ComponentTabItem) {
     const exists = this.tabItems.find((t) => t.componentId === newItem.componentId);

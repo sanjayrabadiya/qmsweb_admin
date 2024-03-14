@@ -121,9 +121,6 @@ export class ChangePasswordComponent   implements OnInit  {
     this.activeModal.close();
   }
 
-  PasswordValidation(event: any) {
-   
-  }
 
   MatchPassword() {
       if((this.form.value.newPassword==this.form.value.reTypePassword && this.form.value.oldPassword !=""))
