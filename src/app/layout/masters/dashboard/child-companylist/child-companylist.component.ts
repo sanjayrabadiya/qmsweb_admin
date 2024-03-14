@@ -3,7 +3,6 @@ import { ChildCompnayModel } from '../dashbord.model';
 import { MasterGridConfig } from 'src/app/shared/components/master-grid/master-grid.component';
 import {  GridComponent } from '@syncfusion/ej2-angular-grids';
 import { GridDataBinding } from 'src/app/shared/directives/grid-data-binding.directive';
-import { Subscription } from 'rxjs';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons/src/common/common-model';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { DashbordService } from '../dashboard.service';

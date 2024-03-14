@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UtilityService } from 'src/app/core/services/utility.service';
 import { Destroyer } from './../../../core/utils/destroyer';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MenuItemModel, MenuEventArgs, MenuComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-navigations';
+import { MenuItemModel, MenuEventArgs, MenuComponent } from '@syncfusion/ej2-angular-navigations';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
 
@@ -93,8 +93,5 @@ export class HeaderComponent extends Destroyer implements OnInit {
 
   }
 
-  created(): void {
-   
-  }
 
 }

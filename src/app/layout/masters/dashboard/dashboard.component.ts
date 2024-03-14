@@ -230,18 +230,12 @@ export class DashboardComponent extends MasterPage<DashbordModel> implements OnI
 
     const dialogRef = this.dialog.open(StudymoduleComponent, { windowClass: 'white-modal modal-small' });
     dialogRef.componentInstance.data = save;
-    dialogRef.result.then((result) => {
-      if (result) {
-        //this.loadContacts();
-      }
+    dialogRef.result.then(() => {
+     
     });
   }
 
-  public exportBeforeEvent(args: MenuEventArgs) {
-    
-  }
-
-  changeType(type: number) {
+   changeType(type: number) {
     this.displayType = type;
     if (type == 1) {
       this.headerText = [

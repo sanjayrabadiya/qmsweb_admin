@@ -16,8 +16,9 @@ export class AppComponent extends Destroyer implements OnInit {
   constructor(private utils: UtilityService, private signalRServer: SignalRService) {
     super();
   }
-
-  ngOnInit() {
-   
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
+
 }
