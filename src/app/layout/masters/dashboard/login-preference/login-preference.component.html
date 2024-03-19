@@ -27,7 +27,7 @@
     <form [formGroup]="form">
         <div class="row">
             <div class="form-group col-lg-4 col-md-3">
-                <label class="label-primary">Company</label>
+                <label for="companyId" class="label-primary">Company</label>
                 <ejs-combobox [dataSource]="CompanyData" [fields]="fields" class="w-100" placeholder="Select Company"
                     formControlName="companyId" [disabled]="true">
                 </ejs-combobox>
@@ -41,13 +41,13 @@
 
             </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Min Password Length</label>
+                <label for="minPasswordLength" class="label-primary">Min Password Length</label>
                 <input type="text" class="w-100 k-textbox" formControlName="minPasswordLength" numOnly noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('minPasswordLength').hasError('required')"></span>
             </div>
 
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Required Special Char</label>
+                <label for="requiredSpecialChar" class="label-primary">Required Special Char</label>
                 <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredSpecialChar" [fields]="sslfields"
                     placeholder="Special Char" class="w-100">
                 </ejs-combobox>
@@ -57,19 +57,19 @@
         </div>
         <div class="row">
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Required Alpha Numeric</label>
+                <label for="requiredAlphaNumber" class="label-primary">Required Alpha Numeric</label>
                 <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredAlphaNumber" [fields]="sslfields"
                     placeholder="Alpha Char" class="w-100">
                 </ejs-combobox>
             </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Required Capital</label>
+                <label for="requiredCapital" class="label-primary">Required Capital</label>
                 <ejs-combobox [dataSource]="sslDataSource" formControlName="requiredCapital" [fields]="sslfields"
                     placeholder="Required Capital" class="w-100">
                 </ejs-combobox>
             </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Expired Day</label>
+                <label for="expiredDay" class="label-primary">Expired Day</label>
                 <input type="text" class="w-100 k-textbox" formControlName="expiredDay" numOnly noSpace />
 
             </div>
@@ -77,7 +77,7 @@
         </div>
         <div class="row">
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Max Login Attempt</label>
+                <label for="maxLoginAttempt" class="label-primary">Max Login Attempt</label>
                 <input type="text" class="w-100 k-textbox" formControlName="maxLoginAttempt" numOnly noSpace />
 
             </div>

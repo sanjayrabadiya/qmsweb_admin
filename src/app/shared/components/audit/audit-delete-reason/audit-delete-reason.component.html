@@ -25,14 +25,14 @@
   </div>
   <div class="row"> 
     <div class="form-group col-md-12">
-      <label>Select Reason</label>
+      <label for="auditReasons">Select Reason</label>
       <ejs-combobox [dataSource]="auditReasons" [fields]="fields" 
       [(ngModel)]="dataItem.reasonId" [ngModelOptions]="{ standalone: true }" 
       (ngModelChange)="reasonChanged($event)" placeholder="Select reason" class="w-100">
         </ejs-combobox>
     </div>
     <div class="form-group col-md-12" *ngIf="dataItem.isOther">
-      <label>Specify Details</label>
+      <label for="details">Specify Details</label>
       <input [(ngModel)]="dataItem.reasonOth" [ngModelOptions]="{ standalone: true }" class="k-textbox w-100" noSpace/>
     </div>
   </div>
