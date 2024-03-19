@@ -33,7 +33,7 @@
         <td class="align-middle text-center">
           <input type="checkbox" id="checkbox{{ item.columnField }}" class="k-checkbox"
             [(ngModel)]="item.isColumnVisible" />
-          <label class="k-checkbox-label" style="margin-right: 15px;" for="checkbox{{ item.columnField }}"></label>
+          <label for="checkbox{{ item.columnField }}" class="k-checkbox-label" style="margin-right: 15px;" ></label>
         </td>
         <td class="align-middle"><input type="text" class="k-textbox w-100" [(ngModel)]="item.columnTitle" disabled/></td>
         <td class="align-middle"><input type="text" class="k-textbox w-100" [(ngModel)]="item.columnWidth" numOnly /></td>

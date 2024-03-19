@@ -6,7 +6,7 @@
     <form [formGroup]="form">
         <div class="row">
             <div class="form-group col-lg-2 col-md-3">
-                <label class="label-primary">Type</label>
+                <label for="RemoveTypes" class="label-primary">Type</label>
                 <ejs-combobox [dataSource]="RemoveTypes" [fields]="fields" class="w-100" placeholder="Select Type"
                     formControlName="Type" (change)="ChangedType($event?.itemData?.id)">
                 </ejs-combobox>
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="form-group col-lg-2 col-md-3">
-                <label class="label-primary">Company</label>
+                <label for="CompanyId" class="label-primary">Company</label>
                 <ejs-combobox [dataSource]="CompanyData" [fields]="fields" class="w-100" placeholder="Select Company"
                     formControlName="CompanyId" [disabled]="true" (change)="ChangedCompany($event?.itemData?.id)">
                 </ejs-combobox>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="form-group col-lg-2 col-md-3">
-                <label class="label-primary">Study Code</label>
+                <label for="ProjectId" class="label-primary">Study Code</label>
                 <ejs-combobox [dataSource]="ProjectData" [fields]="fields" class="w-100" placeholder="Select Study"
                     formControlName="ProjectId" [disabled]="true" (select)="ChangedStudy($event?.itemData?.id)">
                 </ejs-combobox>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group col-lg-3 col-md-2 txtcenter" *ngIf="IsShow && IsdeleteShow">
-                <label class="label-primary m-top "></label>
+                <label for="IsDatabaseBackup" class="label-primary m-top "></label>
                 <i class="las la-check-double correct-cls" *ngIf="this.form.value.IsDatabaseBackup"></i>
                 <button type="button" [disabled]="(form.value.IsDatabaseBackup || form.value.Status == 1)"
                     (click)="backup()" class="btn-white btn-border mr-1">
@@ -53,7 +53,7 @@
             </div>
 
             <div class="form-group col-lg-2 col-md-2 txtcenter" *ngIf="IsShow && IsdeleteShow">
-                <label class="label-primary m-top "></label>
+                <label for="Isdelete" class="label-primary m-top "></label>
                 <i class="las la-check-double correct-cls" *ngIf="form.value.IsDelete"></i>
                 <button type="button" [disabled]="(form.value.IsDelete || form.value.Status == 1)" (click)="DeleteStudy()" class="btn-white btn-border mr-1">
                     <span class="btn-circle-icon btn-cicle-green">
@@ -64,7 +64,7 @@
             </div>
 
             <div class="form-group col-lg-2 col-md-2 txtcenter" *ngIf="IsShow && IsArchieveShow">
-                <label class="label-primary m-top "></label>
+                <label for="IsArchieve" class="label-primary m-top "></label>
                 <i class="las la-check-double correct-cls" *ngIf="this.form.value.IsArchieve"></i>
                 <button type="button" (click)="backup()" class="btn-white btn-border mr-1"
                     [disabled]="(form.invalid || form.pristine)">

@@ -40,7 +40,7 @@
        
         <div class="row">
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Server Name</label>
+                <label for="serverName" class="label-primary">Server Name</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="serverName" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('serverName').hasError('required')"></span>
@@ -52,7 +52,7 @@
                <span *ngIf='editing'>{{databseConfig.serverName}}</span>
             </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Database Name</label>
+                <label for="databaseName" class="label-primary">Database Name</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="databaseName" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('databaseName').hasError('required')"></span>
@@ -64,7 +64,7 @@
                 <span *ngIf='editing'>{{databseConfig.databaseName}}</span>
             </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">User Name</label>
+                <label for="serverLoginName" class="label-primary">User Name</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="serverLoginName" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('serverLoginName').hasError('required')"></span>
@@ -76,7 +76,7 @@
                 <span *ngIf='editing'>{{databseConfig.serverLoginName}}</span>
             </div>
             <div class="form-group col-lg-4 col-md-6" *ngIf='!editing'>
-                <label class="label-primary">Password</label>                
+                <label for="serverPassword" class="label-primary">Password</label>                
                 <input type="password" class="k-textbox w-100" formControlName="serverPassword" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('serverPassword').hasError('required')"></span>
                 <div class="required-text"
@@ -85,7 +85,7 @@
                 </div>               
             </div>    
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Document Path</label>
+                <label for="documentPath" class="label-primary">Document Path</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="documentPath" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('documentPath').hasError('required')"></span>
@@ -97,7 +97,7 @@
                 <span *ngIf='editing'>{{databseConfig.documentPath}}</span>
             </div>   
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">Image Path</label>
+                <label for="imagePath" class="label-primary">Image Path</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="imagePath" maxlength="200" noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('imagePath').hasError('required')"></span>

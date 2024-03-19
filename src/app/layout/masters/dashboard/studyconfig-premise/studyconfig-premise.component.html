@@ -32,7 +32,7 @@
        
         <div class="row">
             <div class="form-group col-lg-4 col-md-6">
-                <label class="label-primary">No of Study</label>
+                <label for="noofStudy" class="label-primary">No of Study</label>
                 <span *ngIf='!editing'>
                 <input type="text" class="k-textbox w-100" formControlName="noofStudy" maxlength="200" numOnly noSpace />
                 <span class="req-symbol-left" *ngIf="form.get('noofStudy').hasError('required')"></span>
@@ -46,7 +46,7 @@
            
                
             <div class="form-group col-lg-4 col-md-6">
-                <label>Valid From</label>
+                <label for="validFrom">Valid From</label>
                 <div *ngIf='!editing'>
                 <ejs-datepicker placeholder="Valid From"  formControlName="validFrom"
                     (valueChange)="setValidToDate($event)"></ejs-datepicker>
@@ -54,7 +54,7 @@
                <div *ngIf='editing'>{{studyConfig.validFrom | dateFormat }}</div>
             </div>   
             <div class="form-group col-lg-4 col-md-6">
-                <label>Valid To</label>
+                <label for="validTo">Valid To</label>
                 <div *ngIf='!editing'>
                 <ejs-datepicker placeholder="Valid To"  [min]='TValidTo' formControlName="validTo">
                 </ejs-datepicker>

@@ -17,7 +17,8 @@
                 Reset
             </button>
             <button class="btn-gray btn-add" (click)="close()">
-                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg" alt="close-white.svg" /></span>
+                <span class="btn-circle-icon btn-cicle-red"><img src="./assets/images/close-white.svg"
+                        alt="close-white.svg" /></span>
                 Cancel
             </button>
         </div>
@@ -27,61 +28,44 @@
     <form [formGroup]="form">
         <div class="row">
             <div class="form-group col-lg-4 col-md-3">
-            <label class="label-primary">Parent Company Code</label>
-            <span> {{CompanyCode}}</span> 
+                <label for="CompanyCode" class="label-primary">Parent Company Code</label>
+                <span> {{CompanyCode}}</span>
             </div>
-                        
-            
             <div class="form-group col-lg-4 col-md-3">
-                <label class="label-primary">Company Code</label>
-                <input type="text" class="k-textbox w-100" formControlName="childcompanyCode"
-                maxlength="200" noSpace />
-            <span class="req-symbol-left"
-                *ngIf="form.get('childcompanyCode').hasError('required')"></span>
-            <div class="required-text"
-                *ngIf="form.get('childcompanyCode').hasError('required') && form.get('childcompanyCode').touched">
-                This field is required!
+                <label for="childcompanyCode" class="label-primary">Company Code</label>
+                <input type="text" class="k-textbox w-100" formControlName="childcompanyCode" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('childcompanyCode').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('childcompanyCode').hasError('required') && form.get('childcompanyCode').touched">
+                    This field is required!
+                </div>
             </div>
-            </div>
-
             <div class="form-group col-lg-4 col-md-3">
-                <label class="label-primary">Company Name</label>
-                <input type="text" class="k-textbox w-100" formControlName="childcompanyName"
-                maxlength="200" noSpace />
-            <span class="req-symbol-left"
-                *ngIf="form.get('childcompanyName').hasError('required')"></span>
-            <div class="required-text"
-                *ngIf="form.get('childcompanyName').hasError('required') && form.get('childcompanyName').touched">
-                This field is required!
+                <label for="childcompanyName" class="label-primary">Company Name</label>
+                <input type="text" class="k-textbox w-100" formControlName="childcompanyName" maxlength="200" noSpace />
+                <span class="req-symbol-left" *ngIf="form.get('childcompanyName').hasError('required')"></span>
+                <div class="required-text"
+                    *ngIf="form.get('childcompanyName').hasError('required') && form.get('childcompanyName').touched">
+                    This field is required!
+                </div>
             </div>
-            </div>
-
         </div>
         <div class="row">
             <div class="form-group col-lg-4 col-md-6">
-              
-                    <label class="label-primary">Address</label>
-                    <input type="text" class="k-textbox w-100" formControlName="childaddress"
-                        maxlength="200" noSpace />
-               
+                <label for="childaddress" class="label-primary">Address</label>
+                <input type="text" class="k-textbox w-100" formControlName="childaddress" maxlength="200" noSpace />
             </div>
             <div class="form-group col-lg-4 col-md-3">
-                <label class="label-primary">Phone</label>
-                <input type="text" class="k-textbox w-100" formControlName="childphone"
-                    maxlength="13" numOnly noSpace />
-        </div>
+                <label for="childphone" class="label-primary">Phone</label>
+                <input type="text" class="k-textbox w-100" formControlName="childphone" maxlength="13" numOnly
+                    noSpace />            </div>
             <div class="form-group col-lg-4 col-md-6">
-                <label>Email ID</label>
-                <input type="text" class="w-100 k-textbox" formControlName="childemail"
-                    maxlength="200" noSpace />
-               
+                <label for="childemail">Email ID</label>
+                <input type="text" class="w-100 k-textbox" formControlName="childemail" maxlength="200" noSpace />
                 <div class="required-text" *ngIf="form.get('childemail').hasError('childemail')">
                     This field is not valid value!
                 </div>
             </div>
-            
-
         </div>
-     
     </form>
 </div>
